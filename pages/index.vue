@@ -38,6 +38,7 @@
           :chart-option="{}"
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
+          :defaultDataKind="'cumulative'"
           :url="'http://www.pref.nara.jp/1652.htm'"
         />
       </v-col>
