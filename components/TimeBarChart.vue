@@ -72,7 +72,7 @@ export default {
   },
   data() {
     return {
-      dataKind: this.defaultDataKind
+      dataKind: this.default-DataKind
     }
   },
   computed: {
