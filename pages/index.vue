@@ -26,7 +26,7 @@
           :chart-data="patientsGraph"
           :date="Data.patients.date"
           :unit="'人'"
-          :default-DataKind="'cumulative'"
+          :defaultDataKind="'cumulative'"
           :url="'http://www.pref.nara.jp/1652.htm'"
         />
       </v-col>
