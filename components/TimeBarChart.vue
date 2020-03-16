@@ -64,7 +64,7 @@ export default {
       required: false,
       default: ''
     },
-    defaultDataKind: {
+    default-DataKind: {
       type: String,
       required: false,
       default: 'transition'
