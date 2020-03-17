@@ -40,17 +40,32 @@
       <div class="SideNavigation-Footer">
         <div class="SideNavigation-SocialLinkContainer">
           <a
-            href="https://twitter.com/pref_nara"
+            href="https://twitter.com/narakencyou"
             target="_blank"
             rel="noopener"
           >
             <img src="/twitter.png" alt="Twitter" />
           </a>
-          <a href="https://www.facebook.com/office.pref.nara/"
+          <a
+            href="https://www.facebook.com/office.pref.nara/"
             target="_blank"
             rel="noopener"
           >
             <img src="/facebook.png" alt="Facebook" />
+          </a>
+          <a
+            href="https://line.me/R/ti/p/%40688bjyqz"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="/line.png" alt="Facebook" />
+          </a>
+          <a
+            href="https://github.com/code4nara/covid19"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="/github.png" alt="GitHub" />
           </a>
         </div>
         <!-- <small class="SideNavigation-Copyright" lang="en">
@@ -69,7 +84,7 @@
     "Navi Close": "サイドメニュー項目を閉じる",
     "Nara": "奈良県",
     "COVID-19": "新型コロナウイルス感染症",
-    "Measures site": "対策サイト",
+    "Measures site": "まとめサイト（非公式）",
     "Nara Prefecture Government": "奈良県",
     "Tokyo COVID-19 Task Force": "新型コロナウイルス感染症対策本部",
     "The latest updates": "県内の最新感染動向",
@@ -79,6 +94,7 @@
     "Official statements from Task Force": "奈良県総務部知事公室防災統括室",
     "Government official website": "奈良県公式ホームページ",
     "About us": "当サイトについて",
+    "Municipalities": "各市町村の対策サイト",
     "Other local Government": "他自治体の対策サイト"
   }
 }
@@ -114,8 +130,7 @@ export default {
         {
           icon: 'mdi-account-multiple',
           title: this.$t('for Citizens'),
-          link:
-            'http://www.pref.nara.jp/#000'
+          link: 'http://www.pref.nara.jp/#000'
         },
         {
           icon: 'mdi-domain',
@@ -125,8 +140,7 @@ export default {
         },
         {
           title: this.$t('Official statements from Task Force'),
-          link:
-	    'http://www.pref.nara.jp/item/222948.htm'
+          link: 'http://www.pref.nara.jp/item/222948.htm'
         },
         {
           title: this.$t('About us'),
@@ -138,9 +152,13 @@ export default {
           divider: true
         },
         {
+          title: this.$t('Municipalities'),
+          link: '/municipalities'
+        },
+        {
           title: this.$t('Other local Government'),
-          link: '/government',
-          divider: true
+          link:
+            'https://github.com/tokyo-metropolitan-gov/covid19/blob/development/forkedSites.md#readme'
         }
       ]
     },

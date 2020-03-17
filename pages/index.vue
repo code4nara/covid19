@@ -26,9 +26,7 @@
           :chart-data="patientsGraph"
           :date="Data.patients.date"
           :unit="'人'"
-          :url="
-            'http://www.pref.nara.jp/1652.htm'
-          "
+          :url="'http://www.pref.nara.jp/1652.htm'"
         />
       </v-col>
 
@@ -40,9 +38,7 @@
           :chart-option="{}"
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
-          :url="
-            'http://www.pref.nara.jp/1652.htm'
-          "
+          :url="'http://www.pref.nara.jp/1652.htm'"
         />
       </v-col>
       <!--
@@ -93,11 +89,11 @@ import TimeBarChart from '@/components/TimeBarChart.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 // import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
-import MetroData from '@/data/metro.json'
+// import MetroData from '@/data/metro.json'
 import DataTable from '@/components/DataTable.vue'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
-import formatConfirmedCases from '@/utils/formatConfirmedCases'
+// import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import News from '@/data/news.json'
 // import SvgCard from '@/components/SvgCard.vue'
 // import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'

@@ -12,7 +12,7 @@
               <img src="/logo.png" alt="奈良県" />
             </div>
             <h1 class="PrintMeta-Heading">
-              新型コロナウイルス感染症<br />対策サイト
+              新型コロナウイルス感染症<br />まとめサイト（非公式）
             </h1>
           </div>
         </v-col>
