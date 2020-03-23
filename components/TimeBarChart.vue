@@ -64,7 +64,7 @@ export default {
       required: false,
       default: ''
     },
-    default-datakind: {
+    defaultdatakind: {
       type: String,
       required: false,
       default: 'transition'
@@ -72,7 +72,7 @@ export default {
   },
   data() {
     return {
-      dataKind: this.default-datakind
+      dataKind: this.defaultdatakind
     }
   },
   computed: {
