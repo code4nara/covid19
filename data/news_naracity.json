@@ -1,0 +1,19 @@
+{
+    "newsItems": [
+	{
+	    "date": "2020/03/24",
+	    "url": "https://www.city.nara.lg.jp/site/coronavirus/61310.html",
+	    "text": "新型コロナウイルス感染防止のため施設等の一部休館について"
+	},
+	{
+	    "date": "2020/03/16",
+	    "url": "https://www.city.nara.lg.jp/site/coronavirus/55138.html",
+	    "text": "新型コロナウイルスによる感染拡大防止によるイベント中止一覧"
+	},
+	{
+	    "date": "2020/03/16",
+	    "url": "https://www.city.nara.lg.jp/site/coronavirus/",
+	    "text": "新型コロナウイルスに関する情報まとめ"
+	}
+    ]
+}
