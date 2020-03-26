@@ -11,7 +11,7 @@
         <svg-card
           title="検査陽性者の状況"
           :title-id="'details-of-confirmed-cases'"
-          :date="Data.last_summary.date"
+          :date="Data.main_summary.date"
         >
           <confirmed-cases-table
             aria-label="検査陽性者の状況"
@@ -89,7 +89,7 @@ import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
 import formatConfirmedCases from '@/utils/formatConfirmedCases'
 import News from '@/data/news_naracity.json'
-// import SvgCard from '@/components/SvgCard.vue'
+import SvgCard from '@/components/SvgCard.vue'
 import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
 
 export default {
@@ -101,7 +101,7 @@ export default {
     WhatsNew,
     //    StaticInfo,
     DataTable,
-    //    SvgCard,
+    SvgCard,
     ConfirmedCasesTable
   },
   data() {
