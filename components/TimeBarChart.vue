@@ -63,11 +63,16 @@ export default {
       type: String,
       required: false,
       default: ''
+    },
+    defaultdatakind: {
+      type: String,
+      required: false,
+      default: 'transition'
     }
   },
   data() {
     return {
-      dataKind: 'transition'
+      dataKind: this.defaultdatakind
     }
   },
   computed: {
