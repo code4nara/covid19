@@ -209,6 +209,7 @@
 		]
 	},
     "main_summary": {
+        "date": "2020/03/24 10:00",
         "attr": "検査実施人数",
         "value": 1000,
         "children": [

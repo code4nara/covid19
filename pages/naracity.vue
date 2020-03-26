@@ -11,9 +11,12 @@
         <svg-card
           title="検査陽性者の状況"
           :title-id="'details-of-confirmed-cases'"
-          :date="Data.inspections_summary.date"
+          :date="Data.last_summary.date"
         >
-          <confirmed-cases-table v-bind="confirmedCases" />
+          <confirmed-cases-table
+            aria-label="検査陽性者の状況"
+            v-bind="confirmedCases"
+          />
         </svg-card>
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
