@@ -2,8 +2,8 @@
   <data-view class="SvgCard" :title="title" :title-id="titleId" :date="date">
     <template v-slot:button>
       <p class="Graph-Desc">
-        （注）県内において疑い例または患者の濃厚接触者として検査を行ったものについて掲載<br />
-        （チャーター機帰国者、クルーズ船乗客等は含まれていない。）
+        （注）奈良県の検査実施人数は不明<br />
+        陽性者数・入院中には、県外のクルーズ船乗客等を含む。
       </p>
     </template>
     <slot />

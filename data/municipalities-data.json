@@ -286,12 +286,14 @@
   "29385": {
     "name": "曽爾村",
     "kana": "そにむら",
+    "href": "https://www.vill.soni.nara.jp/forms/top/top.aspx",
     "row": "16/19",
     "column": "22/25"
   },
   "29386": {
     "name": "御杖村",
     "kana": "みつえむら",
+    "href": "https://www.vill.mitsue.nara.jp/kurashi/index.html",
     "row": "20/23",
     "column": "22/25"
   },
@@ -361,18 +363,21 @@
   "29444": {
     "name": "黒滝村",
     "kana": "くろたきむら",
+    "href": "https://www.vill.kurotaki.nara.jp/",
     "row": "26",
     "column": "10/15"
   },
   "29446": {
     "name": "天川村",
     "kana": "てんかわむら",
+    "href": "https://www.vill.kurotaki.nara.jp/",
     "row": "28/31",
     "column": "10/15"
   },
   "29447": {
     "name": "野迫川村",
     "kana": "のせがわむら",
+    "href": "https://www.vill.nosegawa.nara.jp/top/index.html",
     "row": "30/33",
     "column": "2/7"
   },
@@ -407,6 +412,7 @@
   "29453": {
     "name": "東吉野村",
     "kana": "ひがしよしのむら",
+    "href": "http://www.vill.higashiyoshino.nara.jp/",
     "row": "24",
     "column": "18/25",
     "asides": [{

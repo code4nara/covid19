@@ -1,7 +1,7 @@
 <template>
   <v-app class="app">
     <div v-if="loading" class="loader">
-      <img src="/logo.png" alt="奈良県" />
+      <img src="/ogp.png" alt="奈良県COVID19まとめサイト" />
       <scale-loader color="#A83945" />
     </div>
     <div v-else class="appContainer">

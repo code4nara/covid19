@@ -50,7 +50,7 @@ export default {
   },
   head() {
     return {
-      title: '他自治体の対策サイト'
+      title: '奈良県内各市町村の関連ホームページ'
     }
   }
 }
