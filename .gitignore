@@ -93,3 +93,7 @@ sw.*
 
 # Netlify
 .netlify
+
+# for vscode
+.vscode
+covid19.code-workspace
