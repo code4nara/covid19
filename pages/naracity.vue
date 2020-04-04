@@ -44,11 +44,12 @@
           title="PCR検査実施数"
           :title-id="'number-of-tested'"
           :chart-id="'time-bar-chart-inspections'"
-          :chart-data="contactsGraph"
+          :chart-data="inspectionsGraph"
           :date="Data.inspections_summary.date"
           :unit="'件'"
         />
       </v-col>
+      <!--
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="新型コロナコールセンター相談件数"
@@ -60,9 +61,10 @@
           :url="''"
         />
       </v-col>
+      -->
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          title="新型コロナ受診相談窓口相談件数"
+          title="新型コロナ相談件数"
           :title-id="'number-of-reports-to-covid19-consultation-desk'"
           :chart-id="'time-bar-chart-querents'"
           :chart-data="querentsGraph"
@@ -112,9 +114,9 @@ export default {
     // 退院者グラフ
     // const dischargesGraph = formatGraph(Data.discharges_summary.data)
 
+    // コールセンター相談件数
+    // const contactsGraph = formatGraph(Data.contacts.data)
     // 相談件数
-    const contactsGraph = formatGraph(Data.contacts.data)
-    // 帰国者・接触者電話相談センター相談件数
     const querentsGraph = formatGraph(Data.querents.data)
     // 名古屋市営地下鉄の利用者数の推移
     // const metroGraph = MetroData
@@ -152,7 +154,7 @@ export default {
       patientsTable,
       patientsGraph,
       // dischargesGraph,
-      contactsGraph,
+      // contactsGraph,
       querentsGraph,
       // metroGraph,
       inspectionsGraph,
