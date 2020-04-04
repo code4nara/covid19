@@ -4,19 +4,19 @@
     "children": [
         {
             "attr": "陽性患者数",
-            "value": 24,     
+            "value": 29,     
             "children": [
                 {
                     "attr": "入院患者数",
-                    "value": 10,
+                    "value": 15,
                     "children": [
                         {
                             "attr": "症状のない方",
-                            "value": 0
+                            "value": 2
                         },
                         {
                             "attr": "症状のある方",
-                            "value": 10
+                            "value": 13
                         }
                     ]
                 },
@@ -31,5 +31,5 @@
             ]
         }
     ],
-    "last_update": "2020/04/02 20:00"
+    "last_update": "2020/04/04 20:00"
 }
