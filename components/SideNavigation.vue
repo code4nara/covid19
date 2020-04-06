@@ -93,6 +93,10 @@
     "for Enterprises and Employees": "企業の皆様・はたらく皆様へ",
     "Official statements from Task Force": "奈良県総務部知事公室防災統括室",
     "Government official website": "奈良県公式ホームページ",
+    "General Telephone Consultation": "一般電話窓口",
+    "Departures and Contact Person Consultation Center": "帰国者・接触者相談センター",
+    "Board of Education Announcement": "教育委員会の発表",
+    "Telephone consultation on labor-related matter": "労働関係の電話相談",
     "About us": "当サイトについて",
     "Municipalities": "奈良県内各市町村の関連ページ",
     "Other local Government": "他自治体の対策サイト"
@@ -149,6 +153,23 @@ export default {
         {
           title: this.$t('Government official website'),
           link: 'http://www.pref.nara.jp/',
+          divider: true
+        },
+        {
+          title: this.$t('General Telephone Consultation'),
+          link: 'http://www.pref.nara.jp/#002'
+        },
+        {
+          title: this.$t('Departures and Contact Person Consultation Center'),
+          link: 'http://www.pref.nara.jp/#003'
+        },
+        {
+          title: this.$t('Board of Education Announcement'),
+          link: 'http://www.pref.nara.jp/kyoiku/'
+        },
+        {
+          title: this.$t('Telephone consultation on labor-related matter'),
+          link: 'https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/000611858.pdf',
           divider: true
         },
         {
