@@ -7,7 +7,7 @@
       最新のお知らせ
     </h2>
     <ul class="WhatsNew-list">
-      <li v-for="(item, i) in items" :key="i" class="WhatsNew-list-item">
+      <li v-for="(item, i) in limitCount" :key="i" class="WhatsNew-list-item">
         <a
           class="WhatsNew-list-item-anchor"
           :href="item.url"
@@ -53,7 +53,12 @@ export default {
     formattedDate(dateString) {
       return convertDateToISO8601Format(dateString)
     }
-  }
+  },
+　computed: {
+　　limitCount() {
+　　　return this.items.slice(0,5)
+　　}
+　}
 }
 </script>
 
