@@ -46,6 +46,11 @@ export default {
       required: true
     }
   },
+  computed: {
+    limitCount() {
+      return this.items.slice(0,5)
+    }
+  },
   methods: {
     isInternalLink(path) {
       return !/^https?:\/\//.test(path)
@@ -53,12 +58,7 @@ export default {
     formattedDate(dateString) {
       return convertDateToISO8601Format(dateString)
     }
-  },
-　computed: {
-　　limitCount() {
-　　　return this.items.slice(0,5)
-　　}
-　}
+  }
 }
 </script>
 
