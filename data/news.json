@@ -1,6 +1,11 @@
 {
   "newsItems": [
     {
+      "date": "2020/04/08",
+      "url": "http://www.pref.nara.jp/item/226454.htm",
+      "text": "新型コロナウイルス感染症患者の発生について"
+    },
+    {
       "date": "2020/04/07",
       "url": "https://www.city.nara.lg.jp/site/coronavirus/68050.html",
       "text": "（令和2年4月7日）新型コロナウイルス感染症患者の発生について2（奈良市ホームページ） "
