@@ -1,5 +1,10 @@
 <template>
   <data-view class="SvgCard" :title="title" :title-id="titleId" :date="date">
+    <template v-slot:button>
+      <p class="Graph-Desc">
+        （注）奈良市発表のデータを利用
+      </p>
+    </template>
     <slot />
   </data-view>
 </template>
