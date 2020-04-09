@@ -4,7 +4,7 @@
       <div :class="$style.AdvisoryContents">
         <div>
           <span :class="$style.AdvisoryContentsTitle2">
-            {{ $t('各保健所') }}<br />
+            {{ $t('各保健所') }}
           </span>
         </div>
         <div>

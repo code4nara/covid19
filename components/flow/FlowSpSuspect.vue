@@ -21,7 +21,7 @@
 
     <div :class="$style.callcenter">
       <p :class="$style.fzLarge">
-        {{ $t('新型コロナコールセンター') }}
+        {{ $t('新型コロナウイルス感染症に関する国（厚生労働省）相談窓口 ') }}
       </p>
       <p :class="$style.open">
         {{ $t('午前9時から午後9時（土日祝含む）') }}
@@ -30,7 +30,7 @@
         <span :class="$style.icon">
           <PhoneIcon alt="Phone" />
         </span>
-        <a href="tel:0570550571">0570-550571</a>
+        <a href="tel:0120565653">0120-565653</a>
       </p>
     </div>
 

@@ -1,10 +1,7 @@
 <template>
   <div :class="$style.container">
     <h4 id="consult" :class="[$style.heading, $style.fzXLarge]">
-      {{ $t('新型コロナ受診相談窓口（日本語のみ）') }}
-      <small :class="[$style.break, $style.fzRegular, $style.mt5]">{{
-        $t('帰国者・接触者 電話相談センター')
-      }}</small>
+      {{ $t('各保健所') }}
     </h4>
     <p :class="[$style.open, $style.fzMedium]">
       <span>{{ $t('24時間対応') }}</span>
@@ -12,18 +9,51 @@
     <dl>
       <div :class="$style.daytime">
         <dt :class="[$style.title, $style.fzMedium]">
-          {{ $t('平日（日中）') }}
+          {{ $t('奈良市保健所') }}
         </dt>
         <dd :class="$style.link">
-          <a
-            href="https://www.fukushihoken.metro.tokyo.lg.jp/iryo/kansen/coronasodan.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {{ $t('各保健所の電話番号は福祉保健局HPへ') }}
-            <v-icon size="16">
-              mdi-open-in-new
-            </v-icon>
+          <a href="tel:0742955888">
+            0742-95-5888
+          </a>
+        </dd>
+      </div>
+      <div :class="$style.daytime">
+        <dt :class="[$style.title, $style.fzMedium]">
+          {{ $t('県郡山保健所') }}
+        </dt>
+        <dd :class="$style.link">
+          <a href="tel:0743510194">
+            0743-51-0194
+          </a>
+        </dd>
+      </div>
+      <div :class="$style.daytime">
+        <dt :class="[$style.title, $style.fzMedium]">
+          {{ $t('県中和保健所') }}
+        </dt>
+        <dd :class="$style.link">
+          <a href="tel:0744483037">
+            0744-48-3037
+          </a>
+        </dd>
+      </div>
+      <div :class="$style.daytime">
+        <dt :class="[$style.title, $style.fzMedium]">
+          {{ $t('県吉野保健所') }}
+        </dt>
+        <dd :class="$style.link">
+          <a href="tel:0747520551">
+            0747-52-0551
+          </a>
+        </dd>
+      </div>
+      <div :class="$style.daytime">
+        <dt :class="[$style.title, $style.fzMedium]">
+          {{ $t('県内吉野保健所') }}
+        </dt>
+        <dd :class="$style.link">
+          <a href="tel:0747223051">
+            0747-22-3051
           </a>
         </dd>
       </div>
@@ -32,13 +62,15 @@
           <ul :class="[$style.night]">
             <li>
               <span :class="[$style.fzMedium, $style.break, $style.mb10]">
-                {{ $t('平日（夜間）') }}
+                {{ $t('奈良県庁') }}
               </span>
-              {{ $t('午後5時から翌朝午前9時') }}
+              {{ $t('帰国者・接触者相談センター') }}<br />
+              {{ $t('（新型コロナ受診相談窓口）') }}
             </li>
             <li>
               <span :class="$style.fzMedium">
-                {{ $t('土日祝 終日') }}
+                {{ $t('平日(08時30分～21時00分)') }}<br />
+                {{ $t('土日祝(10時00分～16時00分)') }}
               </span>
             </li>
           </ul>
@@ -48,7 +80,7 @@
             <span :class="$style.icon">
               <PhoneIcon alt="Phone" />
             </span>
-            <a href="tel:0353204592">03-5320-4592</a>
+            <a href="tel:0742271132">0742-27-1132</a>
           </div>
           <div
             v-if="!['ja', 'ja-basic'].includes($i18n.locale)"
