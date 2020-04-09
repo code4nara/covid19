@@ -5,7 +5,9 @@
       :title="headerItem.title"
       :date="headerItem.date"
     />
+    <!--
     <whats-new class="mb-4" :items="newsItems" />
+    -->
     <v-row class="DataBlock">
       <v-col cols="12" md="6" class="DataCard">
         <svg-card
@@ -82,7 +84,7 @@ import PageHeader from '@/components/PageHeader.vue'
 import TimeBarChart from '@/components/TimeBarChart.vue'
 // import MetroBarChart from '@/components/MetroBarChart.vue'
 // import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
-import WhatsNew from '@/components/WhatsNew.vue'
+// import WhatsNew from '@/components/WhatsNew.vue'
 // import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data_naracity.json'
 // import MetroData from '@/data/metro.json'
@@ -100,7 +102,7 @@ export default {
     TimeBarChart,
     //    MetroBarChart,
     //    TimeStackedBarChart,
-    WhatsNew,
+    //    WhatsNew,
     //    StaticInfo,
     DataTable,
     SvgCard,
