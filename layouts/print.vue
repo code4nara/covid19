@@ -2,7 +2,7 @@
   <v-app class="app-print">
     <div v-if="loading" class="loader">
       <img src="/logo.png" alt="奈良県" />
-      <scale-loader color="#A83945" />
+      <scale-loader color="#85005d" />
     </div>
     <v-container v-else>
       <v-row align="center" class="PrintMeta">
