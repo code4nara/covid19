@@ -208,24 +208,6 @@
         opacity=".1"
         rx="4"
       />
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="26"
-        transform="translate(846 36)"
-      >
-        <tspan x="0" y="23">各保健所</tspan>
-      </text>
-      <g transform="translate(820 82)">
-        <rect width="158" height="42" fill="#FFF" fill-rule="nonzero" rx="4" />
-        <text
-          fill="#85005D"
-          font-family="BIZ-UDPGothic, BIZ UDPGothic"
-          font-size="18"
-        >
-          <tspan x="30.184" y="28">24時間対応</tspan>
-        </text>
-      </g>
       <g fill-rule="nonzero">
         <path
           fill="#FFF"
@@ -613,15 +595,15 @@
         </text>
       </g>
       <path stroke="#85005D" stroke-width="4" d="M43 481.5h113M514 481.5h113" />
-      <g transform="translate(730 375)">
+      <g transform="translate(730 415)">
         <circle cx="23" cy="23" r="23" fill="#FFE200" fill-rule="nonzero" />
         <circle cx="23" cy="23" r="22" stroke="#FFF" stroke-width="2" />
       </g>
-      <path d="M735 380h36v36h-36z" />
+      <path d="M735 420h36v36h-36z" />
       <path
         fill="#4D4D4D"
         fill-rule="nonzero"
-        d="M753 386l-2.115 2.115 8.37 8.385H741v3h18.255l-8.37 8.385L753 410l12-12z"
+        d="M753 426l-2.115 2.115 8.37 8.385H741v3h18.255l-8.37 8.385L753 450l12-12z"
       />
       <g transform="translate(0 837)">
         <rect width="542" height="230" fill="#FFF" fill-rule="nonzero" rx="4" />
@@ -652,25 +634,17 @@
           </text>
         </g>
       </g>
-      <g>
-        <g transform="translate(553 837)">
-          <rect
-            width="487"
-            height="321"
-            fill="#FFF"
-            fill-rule="nonzero"
-            rx="4"
-          />
-          <rect
-            width="485.5"
-            height="319.5"
-            x=".75"
-            y=".75"
-            stroke="#D9D9D9"
-            stroke-width="1.5"
-            rx="3.25"
-          />
-        </g>
+      <g transform="translate(553 837)">
+        <rect width="487" height="321" fill="#FFF" fill-rule="nonzero" rx="4" />
+        <rect
+          width="485.5"
+          height="319.5"
+          x=".75"
+          y=".75"
+          stroke="#D9D9D9"
+          stroke-width="1.5"
+          rx="3.25"
+        />
       </g>
       <g fill="#4D4D4D" font-family="BIZ-UDPGothic, BIZ UDPGothic">
         <text font-size="16" transform="translate(61 859)">
@@ -967,18 +941,19 @@
       <g>
         <text
           fill="#4D4D4D"
-          font-family="BIZ-UDPGothic, BIZ UDPGothic"
+          font-family="BIZ-UDPGothic-Bold, BIZ UDPGothic"
           font-size="27"
+          font-weight="bold"
           letter-spacing="-2"
-          transform="translate(814 438)"
+          transform="translate(814 152)"
         >
           <tspan x=".949" y="24">0742-27-1132</tspan>
         </text>
-        <path d="M786 440h26v26h-26z" />
+        <path d="M786 154h26v26h-26z" />
         <path
           fill="#4D4D4D"
           fill-rule="nonzero"
-          d="M793.172 451.689c1.57037195 3.070718 4.068282 5.5686281 7.139 7.139l2.383-2.378c.2880738-.2875707.7136616-.3881642 1.1-.26 1.2480155.409882 2.5534001.6181629 3.867.617.5980029-.0011165 1.0845999.4810123 1.0889999 1.079v3.781c-.0021935.5972134-.4857865 1.0808064-1.0829999 1.083-4.8846547.0005305-9.569399-1.939656-13.02337148-5.3936285-3.4539725-3.4539725-5.39415906-8.13871678-5.39362863-13.0233715.00219375-.59721339.48578672-1.08080636 1.08300011-1.083h3.792c.59721339.00219364 1.08080636.48578661 1.083 1.083-.00203654 1.31366861.20626636 2.61919103.617 3.867.12443977.39102065.01807702.81879229-.275 1.106l-2.378 2.383z"
+          d="M793.172 165.689c1.57037195 3.070718 4.068282 5.5686281 7.139 7.139l2.383-2.378c.2880738-.2875707.7136616-.3881642 1.1-.26 1.2480155.409882 2.5534001.6181629 3.867.617.5980029-.0011165 1.0845999.4810123 1.0889999 1.079v3.781c-.0021935.5972134-.4857865 1.0808064-1.0829999 1.083-4.8846547.0005305-9.569399-1.939656-13.02337148-5.3936285-3.4539725-3.4539725-5.39415906-8.13871678-5.39362863-13.0233715.00219375-.59721339.48578672-1.08080636 1.08300011-1.083h3.792c.59721339.00219364 1.08080636.48578661 1.083 1.083-.00203654 1.31366861.20626636 2.61919103.617 3.867.12443977.39102065.01807702.81879229-.275 1.106l-2.378 2.383z"
         />
       </g>
       <g>
@@ -986,16 +961,16 @@
           fill="#4D4D4D"
           font-family="BIZ-UDPGothic, BIZ UDPGothic"
           font-size="24"
-          letter-spacing="-1.77777778"
-          transform="translate(523 658)"
+          letter-spacing="-1.5"
+          transform="translate(521 658)"
         >
           <tspan x="27" y="22">0120-565653</tspan>
         </text>
-        <path d="M523 658h26v26h-26z" />
+        <path d="M521 658h26v26h-26z" />
         <path
           fill="#4D4D4D"
           fill-rule="nonzero"
-          d="M530.172 669.689c1.57037195 3.070718 4.068282 5.5686281 7.139 7.139l2.383-2.378c.2880738-.2875707.7136616-.3881642 1.1-.26 1.2480155.409882 2.5534001.6181629 3.867.617.5980029-.0011165 1.0845999.4810123 1.0889999 1.079v3.781c-.0021935.5972134-.4857865 1.0808064-1.0829999 1.083-4.8846547.0005305-9.569399-1.939656-13.02337148-5.3936285-3.4539725-3.4539725-5.39415906-8.13871678-5.39362863-13.0233715.00219375-.59721339.48578672-1.08080636 1.08300011-1.083h3.792c.59721339.00219364 1.08080636.48578661 1.083 1.083-.00203654 1.31366861.20626636 2.61919103.617 3.867.12443977.39102065.01807702.81879229-.275 1.106l-2.378 2.383z"
+          d="M528.172 669.689c1.57037195 3.070718 4.068282 5.5686281 7.139 7.139l2.383-2.378c.2880738-.2875707.7136616-.3881642 1.1-.26 1.2480155.409882 2.5534001.6181629 3.867.617.5980029-.0011165 1.0845999.4810123 1.0889999 1.079v3.781c-.0021935.5972134-.4857865 1.0808064-1.0829999 1.083-4.8846547.0005305-9.569399-1.939656-13.02337148-5.3936285-3.4539725-3.4539725-5.39415906-8.13871678-5.39362863-13.0233715.00219375-.59721339.48578672-1.08080636 1.08300011-1.083h3.792c.59721339.00219364 1.08080636.48578661 1.083 1.083-.00203654 1.31366861.20626636 2.61919103.617 3.867.12443977.39102065.01807702.81879229-.275 1.106l-2.378 2.383z"
         />
       </g>
       <g
@@ -1003,68 +978,120 @@
         font-family="BIZ-UDPGothic, BIZ UDPGothic"
         font-size="14"
       >
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="0" y="12">奈良市保健所</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="107" y="12">0742-95-5888</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="0" y="36">県郡山保健所</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="107" y="36">0743-51-0194</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="0" y="60">県中和保健所</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="0" y="84">県吉野保健所</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="107" y="60">0744-48-3037</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="0" y="108">県内吉野保健所</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="107" y="84">0747-52-0551</tspan>
         </text>
-        <text transform="translate(794 145)">
+        <text transform="translate(788 266)">
           <tspan x="107" y="108">0747-22-3051</tspan>
         </text>
       </g>
       <text
         fill="#4D4D4D"
+        font-family="BIZ-UDPGothic-Bold, BIZ UDPGothic"
+        font-size="20"
+        font-weight="bold"
+      >
+        <tspan x="859" y="39">奈良県庁</tspan>
+      </text>
+      <text
+        fill="#4D4D4D"
+        font-family="BIZ-UDPGothic-Bold, BIZ UDPGothic"
+        font-size="16"
+        font-weight="bold"
+      >
+        <tspan x="835" y="228">一般的な相談窓口</tspan>
+      </text>
+      <text
+        fill="#4D4D4D"
+        font-family="BIZ-UDPGothic, BIZ UDPGothic"
+        font-size="16"
+      >
+        <tspan x="803.558594" y="63">帰国者・接触者相談センター</tspan>
+      </text>
+      <text
+        fill="#4D4D4D"
+        font-family="BIZ-UDPGothic, BIZ UDPGothic"
+        font-size="16"
+      >
+        <tspan x="806.839844" y="85">（新型コロナ受診相談窓口）</tspan>
+      </text>
+      <text
+        fill="#4D4D4D"
+        font-family="BIZ-UDPGothic, BIZ UDPGothic"
+        font-size="16"
+      >
+        <tspan x="790.070312" y="114">平日(08時30分～21時00分)</tspan>
+        <tspan x="783.109375" y="134">土日祝(10時00分～16時00分)</tspan>
+      </text>
+      <text
+        fill="#4D4D4D"
+        font-family="BIZ-UDPGothic, BIZ UDPGothic"
+        font-size="14"
+        text-decoration="underline"
+      >
+        <tspan x="804.908203" y="250">平日(08時30分～17時15分)</tspan>
+      </text>
+      <text
+        fill="#4D4D4D"
+        font-family="BIZ-UDPGothic, BIZ UDPGothic"
+        font-size="14"
+        text-decoration="underline"
+      >
+        <tspan x="802.908203" y="403">土日祝(10時00分～16時00分)</tspan>
+      </text>
+      <path stroke="#85005D" stroke-width="4" d="M515.5 139.5h99" />
+      <path stroke="#D9D9D9" d="M783.5 198h236" />
+      <text
+        fill="#4D4D4D"
+        font-family="BIZ-UDPGothic, BIZ UDPGothic"
+        font-size="11"
+      >
+        <tspan x="776" y="486">
+          ※緊急を要する方は各保健所で夜間も相談できます
+        </tspan>
+      </text>
+      <g
+        fill="#4D4D4D"
         font-family="BIZ-UDPGothic, BIZ UDPGothic"
         font-size="14"
       >
-        <tspan x="871" y="304">奈良県庁</tspan>
-      </text>
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="16"
-      >
-        <tspan x="803.558594" y="328">帰国者・接触者相談センター</tspan>
-      </text>
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="16"
-      >
-        <tspan x="806.839844" y="350">（新型コロナ受診相談窓口）</tspan>
-      </text>
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="16"
-      >
-        <tspan x="789.570312" y="380">平日(08時30分～21時00分)</tspan>
-        <tspan x="782.609375" y="400">土日祝(10時00分～16時00分)</tspan>
-      </text>
-      <path stroke="#D9D9D9" d="M783.5 275h236" />
-      <path stroke="#85005D" stroke-width="4" d="M515.5 139.5h99" />
+        <text transform="translate(788 420)">
+          <tspan x="0" y="12">奈良県庁</tspan>
+        </text>
+        <text transform="translate(788 420)">
+          <tspan x="107" y="12">0742-27-8561</tspan>
+        </text>
+        <text transform="translate(788 420)">
+          <tspan x="0" y="33">奈良市保健所</tspan>
+        </text>
+        <text transform="translate(788 420)">
+          <tspan x="107" y="33">0742-95-5888</tspan>
+        </text>
+      </g>
     </g>
   </svg>
 </template>
