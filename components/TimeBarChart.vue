@@ -188,7 +188,7 @@ export default {
                 unit: 'day',
                 unitStepSize: 1,
                 displayFormats: {
-                  day: 'M/D'
+                  day: 'D'
                 },
                 round: 'day'
               },
@@ -201,7 +201,39 @@ export default {
                 max: this.chartData[this.graphRange[1]].label,
                 fontSize: 9,
                 maxTicksLimit: 20,
-                fontColor: '#808080'
+                fontColor: '#808080',
+                maxRotation: 0,
+                minRotation: 0
+              }
+            },
+            {
+              id: 'month',
+              type: 'time',
+              stacked: true,
+              time: {
+                unit: 'month',
+                unitStepSize: 1,
+                displayFormats: {
+                  month: 'YYYY年M月'
+                },
+                round: 'day'
+              },
+              gridLines: {
+                drawOnChartArea: false,
+                drawTicks: true,
+                drawBorder: false,
+                tickMarkLength: 10
+              },
+              ticks: {
+                min: this.chartData[this.graphRange[0]].label,
+                max: this.chartData[this.graphRange[1]].label,
+                fontSize: 11,
+                fontColor: '#808080',
+                padding: 3,
+                fontStyle: 'bold',
+                gridLines: {
+                  display: true
+                }
               }
             }
           ],
