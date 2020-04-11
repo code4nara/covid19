@@ -64,6 +64,12 @@ const createCustomChart = () => {
           default: () => {}
         }
       },
+      watch: {
+        options(options) {
+          this.$data._chart.options = options
+          this.$data._chart.update()
+        }
+      },
       mounted(): void {
         this.renderChart(this.chartData, this.options)
       }

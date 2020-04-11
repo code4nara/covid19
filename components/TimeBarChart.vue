@@ -83,7 +83,7 @@ export default {
   data() {
     return {
       dataKind: this.defaultdatakind,
-      graphRange: [0, 1]
+      graphRange: [0, this.chartData.length - 1]
     }
   },
   computed: {
@@ -197,11 +197,8 @@ export default {
                 display: false
               },
               ticks: {
-                min: new Date('2020-01-24'),
-                max: new Date('2020-04-30'),
-                // TODO: ↓graphRange変更時にチャートが再レンダリングされない...🤔
-                // min: this.chartData[this.graphRange[0]].label,
-                // max: this.chartData[this.graphRange[1]].label,
+                min: this.chartData[this.graphRange[0]].label,
+                max: this.chartData[this.graphRange[1]].label,
                 fontSize: 9,
                 maxTicksLimit: 20,
                 fontColor: '#808080'
