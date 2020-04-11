@@ -208,24 +208,6 @@
         opacity=".1"
         rx="4"
       />
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="26"
-        transform="translate(846 36)"
-      >
-        <tspan x="0" y="23">各保健所</tspan>
-      </text>
-      <g transform="translate(820 82)">
-        <rect width="158" height="42" fill="#FFF" fill-rule="nonzero" rx="4" />
-        <text
-          fill="#85005D"
-          font-family="BIZ-UDPGothic, BIZ UDPGothic"
-          font-size="18"
-        >
-          <tspan x="30.184" y="28">24時間対応</tspan>
-        </text>
-      </g>
       <g fill-rule="nonzero">
         <path
           fill="#FFF"
@@ -1116,73 +1098,6 @@
           <tspan x="107" y="33">0742-95-5888</tspan>
         </text>
       </g>
-      <g
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="14"
-      >
-        <text transform="translate(794 145)">
-          <tspan x="0" y="12">奈良市保健所</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="107" y="12">0742-95-5888</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="0" y="36">県郡山保健所</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="107" y="36">0743-51-0194</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="0" y="60">県中和保健所</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="0" y="84">県吉野保健所</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="107" y="60">0744-48-3037</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="0" y="108">県内吉野保健所</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="107" y="84">0747-52-0551</tspan>
-        </text>
-        <text transform="translate(794 145)">
-          <tspan x="107" y="108">0747-22-3051</tspan>
-        </text>
-      </g>
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="14"
-      >
-        <tspan x="871" y="304">奈良県庁</tspan>
-      </text>
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="16"
-      >
-        <tspan x="803.558594" y="328">帰国者・接触者相談センター</tspan>
-      </text>
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="16"
-      >
-        <tspan x="806.839844" y="350">（新型コロナ受診相談窓口）</tspan>
-      </text>
-      <text
-        fill="#4D4D4D"
-        font-family="BIZ-UDPGothic, BIZ UDPGothic"
-        font-size="16"
-      >
-        <tspan x="789.570312" y="380">平日(08時30分～21時00分)</tspan>
-        <tspan x="782.609375" y="400">土日祝(10時00分～16時00分)</tspan>
-      </text>
-      <path stroke="#D9D9D9" d="M783.5 275h236" />
-      <path stroke="#85005D" stroke-width="4" d="M515.5 139.5h99" />
     </g>
   </svg>
 </template>

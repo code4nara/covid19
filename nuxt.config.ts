@@ -174,7 +174,7 @@ const config: Configuration = {
   },
   manifest: {
     name: '奈良県 新型コロナウイルス感染症対策サイト（非公式）',
-    theme_color: '#A83945',
+    theme_color: '#85005d',
     background_color: '#ffffff',
     display: 'standalone',
     Scope: '/',

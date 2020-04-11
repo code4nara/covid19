@@ -91,6 +91,7 @@
     "The latest updates of NaraCity": "奈良市内の最新感染動向",
     "For those concerned about novel coronavirus infections": "新型コロナウイルス感染症が心配なときに",
     "for Families with children": "お子様をお持ちの皆様へ",
+    "school activity status": "各種学校の休校情報",
     "for Citizens": "県民の皆様へ",
     "for Enterprises and Employees": "企業の皆様・はたらく皆様へ",
     "Official statements from Task Force": "奈良県総務部知事公室防災統括室",
@@ -145,6 +146,12 @@ export default {
           icon: 'parent',
           title: this.$t('for Families with children'),
           link: '/parent'
+        },
+        {
+          icon: 'school',
+          title: this.$t('school activity status'),
+          link: 'https://crssrds.jp/school_info/',
+          divider: true
         },
         {
           icon: 'mdi-account-multiple',

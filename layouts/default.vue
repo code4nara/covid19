@@ -2,7 +2,7 @@
   <v-app class="app">
     <div v-if="loading" class="loader">
       <img src="/ogp.png" alt="奈良県COVID19まとめサイト" />
-      <scale-loader color="#A83945" />
+      <scale-loader color="#85005d" />
     </div>
     <div v-else class="appContainer">
       <div class="naviContainer">
