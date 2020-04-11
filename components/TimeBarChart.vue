@@ -111,13 +111,14 @@ export default {
           unit: this.unit
         }
       }
+      const lastDateString = dayjs(this.chartData.slice(-1)[0].label).format(
+        'M/DD'
+      )
       return {
         lText: this.chartData[
           this.chartData.length - 1
         ].cumulative.toLocaleString(),
-        sText: `${this.chartData.slice(-1)[0].label} 累計値（前日比：${
-          this.displayCumulativeRatio
-        } ${this.unit}）`,
+        sText: `${lastDateString} 累計値（前日比：${this.displayCumulativeRatio} ${this.unit}）`,
         unit: this.unit
       }
     },
