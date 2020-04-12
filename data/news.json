@@ -1,6 +1,11 @@
 {
   "newsItems": [
     {
+      "date": "2020/04/12",
+      "url": "http://www.pref.nara.jp/item/226605.htm",
+      "text": "新型コロナウイルス感染症患者の発生について"
+    },
+    {
       "date": "2020/04/11",
       "url": "http://www.pref.nara.jp/item/226596.htm",
       "text": "新型コロナウイルス感染症患者の発生について"
