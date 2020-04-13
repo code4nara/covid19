@@ -29,6 +29,7 @@ jobs:
 
 #     - name: Build data from Google Spread Sheet
 #       run: |
+#         rm data/data.json data/sickbeds_summary.json data/news.json
 #         curl -LO https://github.com/miiton/covid19-nara-sheet2json/releases/download/0.0.2/sheet2json
 #         chmod +x sheet2json
 #         mkdir -p tmp
