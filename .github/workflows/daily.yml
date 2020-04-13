@@ -37,7 +37,7 @@ jobs:
         mkdir -p tmp
         echo $GOOGLE_SERVICE_ACCOUNT_JSON > tmp/credentials.json
         ./sheet2json
-      with:
+      env:
         GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
         COVID19_JSON2CSV_OUTPUT_DATA: data/data.json
         COVID19_JSON2CSV_OUTPUT_SICKBEDS_SUMMARY: data/sickbeds_summary.json
