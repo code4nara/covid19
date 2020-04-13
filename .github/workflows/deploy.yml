@@ -30,7 +30,7 @@ jobs:
       - name: Build data from Google Spread Sheet
         run: |
           rm data/data.json data/sickbeds_summary.json data/news.json
-          curl -LO https://github.com/miiton/covid19-nara-sheet2json/releases/download/0.0.3/sheet2json
+          curl -LO https://github.com/code4nara/covid19-nara-sheet2json/releases/download/0.0.4/sheet2json
           chmod +x sheet2json
           mkdir -p tmp
           echo $GOOGLE_SERVICE_ACCOUNT_JSON > tmp/credentials.json
@@ -40,9 +40,9 @@ jobs:
           COVID19_JSON2CSV_OUTPUT_DATA: data/data.json
           COVID19_JSON2CSV_OUTPUT_SICKBEDS_SUMMARY: data/sickbeds_summary.json
           COVID19_JSON2CSV_OUTPUT_NEWS: data/news.json
-          COVID19_JSON2CSV_SHEET_ID: 1mBMFN-RBEDoPryuEnGkYwTODsfPPxyOwq6-WSfDrQhM
-          COVID19_JSON2CSV_SHEET_RANGE_PATIENTS: 01.陽性患者属性!A3:O130000
-          COVID19_JSON2CSV_SHEET_RANGE_HOSPITALIZATION: 入院者数の状況!A3:I3
+          COVID19_JSON2CSV_SHEET_ID: 1C07ojkwER8BiAjLBxlzJkfvgM5jxUCLrdtI7wtctTIY
+          COVID19_JSON2CSV_SHEET_RANGE_PATIENTS: 01.陽性患者の属性!A3:O130000
+          COVID19_JSON2CSV_SHEET_RANGE_HOSPITALIZATION: 入院患者の状況!A3:I3
           COVID19_JSON2CSV_SHEET_RANGE_NEWS: 新着情報!A2:C1000
 
       - run: yarn run generate:deploy --fail-on-page-error
