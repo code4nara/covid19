@@ -1,0 +1,63 @@
+name: Daily Deployment
+
+on:
+  schedule:
+    - cron: 0 11 * * *  # 日本時間20:00に実行
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: master
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+
+    - name: Cache dependencies
+      uses: actions/cache@v1
+      with:
+        path: ~/.cache/yarn
+        key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+        restore-keys: |
+          ${{ runner.os }}-yarn-
+
+    - run: yarn install --frozen-lockfile
+    - run: yarn run test
+
+    - name: Build data from Google Spread Sheet
+      run: |
+        curl -LO https://github.com/miiton/covid19-nara-sheet2json/releases/download/0.0.2/sheet2json
+        chmod +x sheet2json
+        mkdir -p tmp
+        echo $GOOGLE_SERVICE_ACCOUNT_JSON > tmp/credentials.json
+        ./sheet2json
+      with:
+        GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+        COVID19_JSON2CSV_OUTPUT_DATA: data/data.json
+        COVID19_JSON2CSV_OUTPUT_SICKBEDS_SUMMARY: data/sickbeds_summary.json
+        COVID19_JSON2CSV_OUTPUT_NEWS: data/news.json
+        COVID19_JSON2CSV_SHEET_ID: 1mBMFN-RBEDoPryuEnGkYwTODsfPPxyOwq6-WSfDrQhM
+        COVID19_JSON2CSV_SHEET_RANGE_PATIENTS: 01.陽性患者属性!A3:O130000
+        COVID19_JSON2CSV_SHEET_RANGE_HOSPITALIZATION: 入院者数の状況!A3:I3
+        COVID19_JSON2CSV_SHEET_RANGE_NEWS: 新着情報!A2:C1000
+
+    - name: Upload json data
+      uses: actions/upload-artifact@v1
+      with:
+        name: data
+        path: data
+
+    - run: yarn run generate:deploy --fail-on-page-error
+
+#   - name: deploy
+#     uses: peaceiris/actions-gh-pages@v3
+#     with:
+#       github_token: ${{ secrets.GITHUB_TOKEN }}
+#       publish_dir: ./dist
+#       publish_branch: production
