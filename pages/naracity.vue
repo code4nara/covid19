@@ -29,13 +29,15 @@
           :title-id="'number-of-confirmed-cases'"
           :chart-id="'time-bar-chart-patients'"
           :chart-data="patientsGraph"
-          :date="Data.patients.date"
+          :date="Data.patients_summary.date"
           :unit="'人'"
           :source-url="
             'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
           "
           :source-text="'奈良市提供のデータを利用'"
-          :note="'報道発表の日付と一致しないデータがあります'"
+          :note="
+            '管外検査を含まないため検査陽性者の状況などと異なります。陽性結果が確認日のため報道発表日付と異なります。'
+          "
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">

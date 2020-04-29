@@ -38,7 +38,7 @@
           </v-icon>
         </a>
       </div>
-      <time :datetime="formattedDate">{{ date }} 更新</time>
+      <time :datetime="formattedDate">{{ date }} 時点</time>
     </v-footer>
   </v-card>
 </template>
