@@ -133,7 +133,7 @@ export default {
   data() {
     // 感染者数グラフ
     const patientsGraph = formatGraph(Data.patients_summary.data)
-    // 感染者数
+    // 感染者状況表
     const patientsTable = formatTable(Data.patients.data)
     // 退院者グラフ
     // const dischargesGraph = formatGraph(Data.discharges_summary.data)
@@ -143,8 +143,6 @@ export default {
     // const contactsGraph = formatGraph(Data.contacts.data)
     // 相談件数
     const querentsGraph = formatGraph(Data.querents.data)
-    // 名古屋市営地下鉄の利用者数の推移
-    // const metroGraph = MetroData
 
     // 検査実施日別グラフ
     const inspectionsGraph = formatGraph(Data.inspections_summary.data)
@@ -166,13 +164,22 @@ export default {
     // 検査陽性者の状況
     const confirmedCases = formatConfirmedCases(Data.main_summary)
 
+    //    const sumInfoOfPatients = {
+    //      lText: patientsGraph[
+    //        patientsGraph.length - 1
+    //      ].cumulative.toLocaleString(),
+    //      sText:
+    //        dayjs(patientsGraph[patientsGraph.length - 1].label).format('M/D') +
+    //        'の累計',
+    //      unit: '人'
+    //    }
+
+    //
     const sumInfoOfPatients = {
-      lText: patientsGraph[
-        patientsGraph.length - 1
-      ].cumulative.toLocaleString(),
-      sText:
-        dayjs(patientsGraph[patientsGraph.length - 1].label).format('M/D') +
-        'の累計',
+      // lText: Data.main_summary.children[0].陽性患者数 ,
+      // attr陽性患者数 の値を直接取得
+      lText: Data.main_summary.children[0].value,
+      sText: dayjs(Date.parse(Data.main_summary.date)).format('M/D') + '現在',
       unit: '人'
     }
 
