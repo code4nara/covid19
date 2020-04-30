@@ -96,7 +96,7 @@
     "for Enterprises and Employees": "中小企業・小規模事業者の皆様へ",
     "Official statements from Task Force": "奈良県総務部知事公室防災統括室",
     "Government official website": "奈良県公式ホームページ",
-    "Governor press conference": "知事記者会見（2020年4月16日）",
+    "Governor press conference": "知事記者会見（2020年4月28日）",
     "General Telephone Consultation": "一般電話窓口",
     "Departures and Contact Person Consultation Center": "帰国者・接触者相談センター",
     "Board of Education Announcement": "教育委員会の発表",
@@ -159,7 +159,7 @@ export default {
         },
         {
           title: this.$t('Governor press conference'),
-          link: 'http://www.pref.nara.jp/55112.htm'
+          link: 'http://www.pref.nara.jp/55279.htm'
         },
         {
           title: this.$t('Municipalities'),
