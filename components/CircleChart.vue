@@ -12,12 +12,12 @@
         <i18n tag="li" path="（注）病床数は{data}の入院可能病床数">
           <a
             :class="$style.GraphLink"
-            href="http://www.pref.nara.jp/secure/224794/64_4.pdf"
+            href="http://www.pref.nara.jp/55181.htm"
             target="_blank"
             rel="noopener"
             place="data"
           >
-            「新型コロナウイルス感染症への県の対応について」
+            奈良市オープンデータ
           </a>
         </i18n>
       </ul>
