@@ -3,10 +3,7 @@
     <li :class="[$style.box, $style.tall, $style.tested]">
       <div :class="[$style.pillar_tested]">
         <div :class="$style.content">
-          <span>
-            {{ $t('入院者数') }}
-            <br />({{ $t('累計') }})
-          </span>
+          <span> {{ $t('感染者数') }}<br />({{ $t('累計') }}) </span>
           <span>
             <strong>{{ 陽性者数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
@@ -17,7 +14,7 @@
     <li :class="[$style.box, $style.tall, $style.parent, $style.confirmed]">
       <div :class="$style.pillar">
         <div :class="$style.content">
-          <span>{{ $t('入院者数') }}<br />({{ $t('現在') }})</span>
+          <span>{{ $t('感染者数') }}<br />({{ $t('現在') }})</span>
           <span>
             <strong>{{ 入院患者数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
