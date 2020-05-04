@@ -86,6 +86,7 @@
       <patients-and-sickbeds
         :source-url="'http://www.pref.nara.jp/'"
         :source-text="'奈良県の公開情報を利用'"
+        :date="Data.sickbeds_summary.date"
       />
     </v-row>
   </div>

@@ -69,9 +69,9 @@ import ConsultationDeskReportsNumberCard from '@/components/cards/ConsultationDe
 import MetroCard from '@/components/cards/MetroCard.vue'
 import AgencyCard from '@/components/cards/AgencyCard.vue'
 import ShinjukuVisitorsCard from '@/components/cards/ShinjukuVisitorsCard.vue'
-import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue' */
+import ChiyodaVisitorsCard from '@/components/cards/ChiyodaVisitorsCard.vue'
+import sickbedsSummary from '@/data/sickbeds_summary.json' */
 import PatientsAndSickbeds from '@/components/cards/PatientsAndSickbeds.vue'
-import sickbedsSummary from '@/data/sickbeds_summary.json'
 
 export default {
   components: {
@@ -146,7 +146,7 @@ export default {
         break */
       case 'patients-and-sickbeds':
         title = this.$t('入院者数と残り病床数')
-        updatedAt = sickbedsSummary.last_update
+        updatedAt = Data.sickbeds_summary.date
         break
     }
 
