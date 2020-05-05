@@ -13,7 +13,7 @@
         <svg-card
           title="検査陽性者の状況"
           :title-id="'details-of-confirmed-cases'"
-          :date="Data.main_summary.date"
+          :date="DataCity.main_summary.date"
           :source-url="'https://www.city.nara.lg.jp/site/coronavirus/'"
           :source-text="'奈良市提供のデータを利用'"
         >
@@ -109,6 +109,7 @@ import TimeBarChart from '@/components/TimeBarChart.vue'
 // import WhatsNew from '@/components/WhatsNew.vue'
 // import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data_naracity.json'
+import DataCity from '@/data/naracity.json'
 // import MetroData from '@/data/metro.json'
 import DataTable from '@/components/DataTable.vue'
 import formatGraph from '@/utils/formatGraph'
@@ -133,7 +134,7 @@ export default {
   data() {
     // 感染者数グラフ
     const patientsGraph = formatGraph(Data.patients_summary.data)
-    // 感染者状況表
+    // 感染者リスト
     const patientsTable = formatTable(Data.patients.data)
     // 退院者グラフ
     // const dischargesGraph = formatGraph(Data.discharges_summary.data)
@@ -162,7 +163,7 @@ export default {
     // )
 
     // 検査陽性者の状況
-    const confirmedCases = formatConfirmedCases(Data.main_summary)
+    const confirmedCases = formatConfirmedCases(DataCity.main_summary)
 
     //    const sumInfoOfPatients = {
     //      lText: patientsGraph[
@@ -185,6 +186,7 @@ export default {
 
     const data = {
       Data,
+      DataCity,
       patientsTable,
       patientsGraph,
       // dischargesGraph,
