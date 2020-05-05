@@ -17,7 +17,7 @@
             rel="noopener"
             place="data"
           >
-            奈良市オープンデータ
+            奈良県オープンデータ
           </a>
         </i18n>
       </ul>
