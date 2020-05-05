@@ -3,29 +3,39 @@ type DataType = {
   value: number
   children: [
     {
-      attr: '陽性患者数'
+      attr: '感染者数累計'
       value: number
       children: [
         {
-          attr: '入院患者数'
+          attr: '現在感染者数'
           value: number
           children: [
             {
-              attr: '症状のない方'
+              attr: '入院中'
+              value: number
+              children: [
+                {
+                  attr: '重症'
+                  value: number
+                }
+              ]
+            },
+            {
+              attr: '宿泊療養'
               value: number
             },
             {
-              attr: '症状のある方'
+              attr: '自宅療養'
               value: number
             }
           ]
         },
         {
-          attr: '退院した方'
+          attr: '退院等累計'
           value: number
         },
         {
-          attr: '亡くなられた方'
+          attr: '死亡'
           value: number
         }
       ]
@@ -35,12 +45,14 @@ type DataType = {
 
 type ConfirmedCasesType = {
   検査実施人数: number
-  陽性者数: number
-  入院患者数: number
-  症状のある方: number
-  症状のない方: number
-  亡くなられた方: number
-  退院した方: number
+  感染者数累計: number
+  現在感染者数: number
+  入院中: number
+  重症: number
+  宿泊療養: number
+  自宅療養: number
+  退院等累計: number
+  死亡: number
 }
 
 /**
@@ -51,12 +63,14 @@ type ConfirmedCasesType = {
 export default (data: DataType) => {
   const formattedData: ConfirmedCasesType = {
     検査実施人数: data.value,
-    陽性者数: data.children[0].value,
-    入院患者数: data.children[0].children[0].value,
-    症状のある方: data.children[0].children[0].children[1].value,
-    症状のない方: data.children[0].children[0].children[0].value,
-    亡くなられた方: data.children[0].children[2].value,
-    退院した方: data.children[0].children[1].value
+    感染者数累計: data.children[0].value,
+    現在感染者数: data.children[0].children[0].value,
+    入院中: data.children[0].children[0].children[0].value,
+    重症: data.children[0].children[0].children[0].children[0].value,
+    自宅療養: data.children[0].children[0].children[2].value,
+    宿泊療養: data.children[0].children[0].children[1].value,
+    退院等累計: data.children[0].children[1].value,
+    死亡: data.children[0].children[2].value
   }
   return formattedData
 }

@@ -5,7 +5,7 @@
         <div :class="$style.content">
           <span> {{ $t('感染者数') }}<br />({{ $t('累計') }}) </span>
           <span>
-            <strong>{{ 陽性者数 }}</strong>
+            <strong>{{ 感染者数累計 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -16,7 +16,7 @@
         <div :class="$style.content">
           <span>{{ $t('感染者数') }}<br />({{ $t('現在') }})</span>
           <span>
-            <strong>{{ 入院患者数 }}</strong>
+            <strong>{{ 現在感染者数 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -29,7 +29,7 @@
               <span v-html="$t('入院中')" />
               <!-- eslint-enable vue/no-v-html-->
               <span>
-                <strong>{{ 症状のある方 }}</strong>
+                <strong>{{ 入院中 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -42,7 +42,7 @@
               <span v-html="$t('宿泊療養')" />
               <!-- eslint-enable vue/no-v-html-->
               <span>
-                <strong>{{ 症状のない方 }}</strong>
+                <strong>{{ 宿泊療養 }}</strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -57,7 +57,7 @@
           <span v-html="$t('亡くな<br />られた方')" />
           <!-- eslint-enable vue/no-v-html-->
           <span>
-            <strong>{{ 亡くなられた方 }}</strong>
+            <strong>{{ 死亡 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -70,7 +70,7 @@
           <span v-html="$t('退院<br />した方')" />
           <!-- eslint-enable vue/no-v-html-->
           <span>
-            <strong>{{ 退院した方 }}</strong>
+            <strong>{{ 退院等累計 }}</strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -89,27 +89,35 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    陽性者数: {
+    感染者数累計: {
       type: Number,
       required: true
     },
-    入院患者数: {
+    現在感染者数: {
       type: Number,
       required: true
     },
-    症状のない方: {
+    入院中: {
       type: Number,
       required: true
     },
-    症状のある方: {
+    重症: {
+      type: Number,
+      required: false
+    },
+    宿泊療養: {
       type: Number,
       required: true
     },
-    亡くなられた方: {
+    自宅療養: {
       type: Number,
       required: true
     },
-    退院した方: {
+    死亡: {
+      type: Number,
+      required: true
+    },
+    退院等累計: {
       type: Number,
       required: true
     }
