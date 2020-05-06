@@ -580,7 +580,7 @@
   "main_summary":{
     "date": "2020/04/26",
     "attr": "検査実施人数",
-    "value": 0,
+    "value": 380,
     "children": [
       {
         "attr": "感染者数累計",
@@ -588,7 +588,7 @@
         "children": [
           {
             "attr": "現在感染者数",
-            "value": -1,
+            "value": 11,
             "children": [
               {
                 "attr": "入院中",

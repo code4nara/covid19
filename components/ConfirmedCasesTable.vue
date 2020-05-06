@@ -48,6 +48,19 @@
             </div>
           </div>
         </li>
+        <li :class="[$style.box, $style.minor]">
+          <div :class="$style.pillar">
+            <div :class="$style.content">
+              <!-- eslint-disable vue/no-v-html-->
+              <span v-html="$t('自宅療養')" />
+              <!-- eslint-enable vue/no-v-html-->
+              <span>
+                <strong>{{ 自宅療養 }}</strong>
+                <span :class="$style.unit">{{ $t('人') }}</span>
+              </span>
+            </div>
+          </div>
+        </li>
       </ul>
     </li>
     <li :class="[$style.box, $style.tall, $style.deceased]">
