@@ -21,9 +21,7 @@
           :chart-data="patientsGraph"
           :date="Data.patients_summary.date"
           :unit="'人'"
-          :source-url="
-            'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
-          "
+          :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
           :note="
             '管外検査を含まないため検査陽性者の状況などと異なります。陽性結果が確認日のため報道発表日付と異なります。'
@@ -38,9 +36,7 @@
           :chart-option="{}"
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
-          :source-url="
-            'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
-          "
+          :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
         />
       </v-col>
@@ -52,9 +48,7 @@
           :chart-data="inspectionsGraph"
           :date="Data.inspections_summary.date"
           :unit="'件'"
-          :source-url="
-            'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
-          "
+          :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
         />
       </v-col>
@@ -80,9 +74,7 @@
           :date="Data.querents.date"
           :unit="'件'"
           :url="''"
-          :source-url="
-            'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
-          "
+          :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
         />
       </v-col>
