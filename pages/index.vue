@@ -160,9 +160,7 @@ export default {
     // )
 
     // 検査陽性者の状況
-    /*
-    const confirmedCases = formatConfirmedCases(Data.main_summary)
-    */
+    /*    const confirmedCases = formatConfirmedCases(Data.main_summary)    */
 
     const sumInfoOfPatients = {
       lText: patientsGraph[

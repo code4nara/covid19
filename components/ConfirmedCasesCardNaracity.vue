@@ -1,6 +1,5 @@
 <template>
   <data-view
-    class="SvgCard"
     :title="title"
     :title-id="titleId"
     :date="date"
@@ -8,32 +7,33 @@
     :source-url="sourceUrl"
   >
     <template v-slot:button>
-      <p class="Graph-Desc">
-        （注）表の数字は奈良市が公表したデータ
+      <p :class="$style.note">
+        {{ $t('（注）奈良市報道発表資料に基づく数字') }}
       </p>
     </template>
     <slot />
+    <template v-slot:footer>
+      <open-data-link v-show="url" :url="url" />
+    </template>
   </data-view>
 </template>
 
-<style lang="scss" scoped>
-.SvgCard {
-  ::v-deep svg {
-    width: 100%;
-  }
-  .Graph-Desc {
-    margin-top: 10px;
-    margin-bottom: 0;
-    font-size: 12px;
-    color: $gray-3;
-  }
+<style lang="scss" module>
+.note {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 12px;
+  color: $gray-3;
 }
 </style>
 
-<script>
+<script lang="ts">
+import Vue from 'vue'
 import DataView from '@/components/DataView.vue'
-export default {
-  components: { DataView },
+import OpenDataLink from '@/components/OpenDataLink.vue'
+
+export default Vue.extend({
+  components: { DataView, OpenDataLink },
   props: {
     title: {
       type: String,
@@ -47,6 +47,11 @@ export default {
       type: String,
       default: ''
     },
+    url: {
+      type: String,
+      required: false,
+      default: ''
+    },
     sourceText: {
       type: String,
       required: false,
@@ -58,5 +63,5 @@ export default {
       default: ''
     }
   }
-}
+})
 </script>
