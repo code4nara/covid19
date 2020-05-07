@@ -29,21 +29,15 @@ jobs:
 
       - name: Fetch & build data
         run: |
-          # 奈良県データをGoogle Spread Sheetから取得
-          rm data/data.json
-          rm data/sickbeds_summary.json
-          rm data/news.json
-          curl -LO https://github.com/code4nara/covid19-nara-sheet2json/releases/latest/download/sheet2json
-          chmod +x sheet2json
-          mkdir -p tmp
-          echo $GOOGLE_SERVICE_ACCOUNT_JSON > tmp/credentials.json
-          ./sheet2json
-
           # 奈良市データを所定のサーバーから取得 (TODO: newsが上記処理と重複しているのを直す)
-          rm data/data_naracity.json
+          rm data/data.json
           rm data/news.json
-          curl -L https://stopcovid19.code4nara.org/api/data_naracity.json -o data/data_naracity.json
+          rm data/data_naracity.json
+          rm data/naracity.json
+          curl -L https://stopcovid19.code4nara.org/api/data.json -o data/data.json
           curl -L https://stopcovid19.code4nara.org/api/news.json -o data/news.json
+          curl -L https://stopcovid19.code4nara.org/api/data_naracity.json -o data/data_naracity.json
+          curl -L https://stopcovid19.code4nara.org/api/naracity.json -o data/naracity.json
         env:
           GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
           COVID19_JSON2CSV_OUTPUT_DATA: data/data.json
