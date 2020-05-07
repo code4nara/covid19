@@ -1,5 +1,5 @@
 <template>
-  <div class="MainPage">
+  <div class="MainPagconfire">
     <page-header
       :icon="headerItem.icon"
       :title="headerItem.title"
@@ -9,20 +9,10 @@
     <whats-new class="mb-4" :items="newsItems" />
     -->
     <v-row class="DataBlock">
-      <v-col cols="12" md="6" class="DataCard">
-        <svg-card
-          title="検査陽性者の状況"
-          :title-id="'details-of-confirmed-cases'"
-          :date="Data.main_summary.date"
-          :source-url="'https://www.city.nara.lg.jp/site/coronavirus/'"
-          :source-text="'奈良市提供のデータを利用'"
-        >
-          <confirmed-cases-table
-            aria-label="検査陽性者の状況"
-            v-bind="confirmedCases"
-          />
-        </svg-card>
-      </v-col>
+      <confirmed-cases-details-card-naracity
+        :source-url="'https://www.city.nara.lg.jp/site/coronavirus/'"
+        :source-text="'奈良市提供のデータを利用'"
+      />
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="陽性者数"
@@ -31,9 +21,7 @@
           :chart-data="patientsGraph"
           :date="Data.patients_summary.date"
           :unit="'人'"
-          :source-url="
-            'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
-          "
+          :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
           :note="
             '管外検査を含まないため検査陽性者の状況などと異なります。陽性結果が確認日のため報道発表日付と異なります。'
@@ -48,9 +36,7 @@
           :chart-option="{}"
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
-          :source-url="
-            'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
-          "
+          :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
         />
       </v-col>
@@ -62,9 +48,7 @@
           :chart-data="inspectionsGraph"
           :date="Data.inspections_summary.date"
           :unit="'件'"
-          :source-url="
-            'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
-          "
+          :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
         />
       </v-col>
@@ -90,9 +74,7 @@
           :date="Data.querents.date"
           :unit="'件'"
           :url="''"
-          :source-url="
-            'https://www.city.nara.lg.jp/corona/opendata_covid19_naracity.xlsx'
-          "
+          :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
         />
       </v-col>
@@ -102,38 +84,32 @@
 
 <script>
 import dayjs from 'dayjs'
+
 import PageHeader from '@/components/PageHeader.vue'
 import TimeBarChart from '@/components/TimeBarChart.vue'
-// import MetroBarChart from '@/components/MetroBarChart.vue'
-// import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 // import WhatsNew from '@/components/WhatsNew.vue'
-// import StaticInfo from '@/components/StaticInfo.vue'
-import Data from '@/data/data_naracity.json'
-// import MetroData from '@/data/metro.json'
 import DataTable from '@/components/DataTable.vue'
+
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
-import formatConfirmedCases from '@/utils/formatConfirmedCases'
+import ConfirmedCasesDetailsCardNaracity from '@/components/cards/ConfirmedCasesDetailsCardNaracity.vue'
+
+import Data from '@/data/data_naracity.json'
+import DataCity from '@/data/naracity.json'
 import News from '@/data/news_naracity.json'
-import SvgCard from '@/components/SvgCard_naracity.vue'
-import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
 
 export default {
   components: {
     PageHeader,
     TimeBarChart,
-    //    MetroBarChart,
-    //    TimeStackedBarChart,
-    //    WhatsNew,
-    //    StaticInfo,
-    DataTable,
-    SvgCard,
-    ConfirmedCasesTable
+    // WhatsNew,
+    ConfirmedCasesDetailsCardNaracity,
+    DataTable
   },
   data() {
     // 感染者数グラフ
     const patientsGraph = formatGraph(Data.patients_summary.data)
-    // 感染者状況表
+    // 感染者リスト
     const patientsTable = formatTable(Data.patients.data)
     // 退院者グラフ
     // const dischargesGraph = formatGraph(Data.discharges_summary.data)
@@ -141,38 +117,12 @@ export default {
     // 帰国者・接触者電話相談センター相談件数
     // コールセンター相談件数
     // const contactsGraph = formatGraph(Data.contacts.data)
+
     // 相談件数
     const querentsGraph = formatGraph(Data.querents.data)
 
     // 検査実施日別グラフ
     const inspectionsGraph = formatGraph(Data.inspections_summary.data)
-    // const inspectionsGraph = [
-    //   Data.inspections_summary.data['県内'],
-    //   Data.inspections_summary.data['その他']
-    // ]
-    // const inspectionsItems = [
-    //  '県内発生（疑い例・接触者調査）',
-    //  'その他（チャーター便・クルーズ便）'
-    // ]
-    // const inspectionsLabels = Data.inspections_summary.labels
-    // 死亡者数
-    // #MEMO: 今後使う可能性あるので一時コメントアウト
-    // const fatalitiesTable = formatTable(
-    //   Data.patients.data.filter(patient => patient['備考'] === '死亡')
-    // )
-
-    // 検査陽性者の状況
-    const confirmedCases = formatConfirmedCases(Data.main_summary)
-
-    //    const sumInfoOfPatients = {
-    //      lText: patientsGraph[
-    //        patientsGraph.length - 1
-    //      ].cumulative.toLocaleString(),
-    //      sText:
-    //        dayjs(patientsGraph[patientsGraph.length - 1].label).format('M/D') +
-    //        'の累計',
-    //      unit: '人'
-    //    }
 
     //
     const sumInfoOfPatients = {
@@ -185,16 +135,11 @@ export default {
 
     const data = {
       Data,
+      DataCity,
       patientsTable,
       patientsGraph,
-      // dischargesGraph,
-      // contactsGraph,
       querentsGraph,
-      // metroGraph,
       inspectionsGraph,
-      // inspectionsItems,
-      // inspectionsLabels,
-      confirmedCases,
       sumInfoOfPatients,
       headerItem: {
         icon: 'mdi-chart-timeline-variant',
@@ -202,59 +147,6 @@ export default {
         date: Data.lastUpdate
       },
       newsItems: News.newsItems
-      // metroGraphOption: {
-      // responsive: true,
-      // legend: {
-      // display: true
-      // },
-      // scales: {
-      // xAxes: [
-      // {
-      // position: 'bottom',
-      // stacked: false,
-      // gridLines: {
-      // display: true
-      // },
-      // ticks: {
-      // fontSize: 10,
-      // maxTicksLimit: 20,
-      // fontColor: '#808080'
-      // }
-      // }
-      // ],
-      // yAxes: [
-      // {
-      // stacked: false,
-      // gridLines: {
-      // display: true
-      // },
-      // ticks: {
-      // fontSize: 12,
-      // maxTicksLimit: 10,
-      // fontColor: '#808080',
-      // callback(value) {
-      // return value.toFixed(2) + '%'
-      // }
-      // }
-      // }
-      // ]
-      // },
-      // tooltips: {
-      // displayColors: false,
-      // callbacks: {
-      // title(tooltipItems, _) {
-      // const label = tooltipItems[0].label
-      // return `期間: ${label}`
-      // },
-      // label(tooltipItem, data) {
-      // const currentData = data.datasets[tooltipItem.datasetIndex]
-      // const percentage = `${currentData.data[tooltipItem.index]}%`
-
-      // return `${metroGraph.base_period}の利用者数との相対値: ${percentage}`
-      // }
-      // }
-      // }
-      // }
     }
     return data
   },

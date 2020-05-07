@@ -29,30 +29,15 @@ jobs:
 
       - name: Fetch & build data
         run: |
-          # 奈良県データをGoogle Spread Sheetから取得
-          rm data/data.json
-          rm data/sickbeds_summary.json
-          rm data/news.json
-          curl -LO https://github.com/code4nara/covid19-nara-sheet2json/releases/latest/download/sheet2json
-          chmod +x sheet2json
-          mkdir -p tmp
-          echo $GOOGLE_SERVICE_ACCOUNT_JSON > tmp/credentials.json
-          ./sheet2json
-
           # 奈良市データを所定のサーバーから取得 (TODO: newsが上記処理と重複しているのを直す)
-          rm data/data_naracity.json
+          rm data/data.json
           rm data/news.json
-          curl -L https://stopcovid19.code4nara.org/api/data_naracity.json -o data/data_naracity.json
+          rm data/data_naracity.json
+          rm data/naracity.json
+          curl -L https://stopcovid19.code4nara.org/api/data.json -o data/data.json
           curl -L https://stopcovid19.code4nara.org/api/news.json -o data/news.json
-        env:
-          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-          COVID19_JSON2CSV_OUTPUT_DATA: data/data.json
-          COVID19_JSON2CSV_OUTPUT_SICKBEDS_SUMMARY: data/sickbeds_summary.json
-          COVID19_JSON2CSV_OUTPUT_NEWS: data/news.json
-          COVID19_JSON2CSV_SHEET_ID: 1C07ojkwER8BiAjLBxlzJkfvgM5jxUCLrdtI7wtctTIY
-          COVID19_JSON2CSV_SHEET_RANGE_PATIENTS: 01.陽性患者の属性!A3:O130000
-          COVID19_JSON2CSV_SHEET_RANGE_HOSPITALIZATION: 入院患者の状況!A3:I3
-          COVID19_JSON2CSV_SHEET_RANGE_NEWS: 新着情報!A2:C1000
+          curl -L https://stopcovid19.code4nara.org/api/data_naracity.json -o data/data_naracity.json
+          curl -L https://stopcovid19.code4nara.org/api/naracity.json -o data/naracity.json
 
       - run: yarn run generate:deploy --fail-on-page-error
 

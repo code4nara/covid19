@@ -4,7 +4,7 @@
       :title="$t('入院者数と残り病床数')"
       :title-id="'patients-and-sickbeds'"
       :chart-data="sickbedsGraph"
-      :date="sickbedsSummary.last_update"
+      :date="Data.sickbeds_summary.date"
       :unit="$t('床')"
       :info="$t('総病床数')"
       :url="'http://www.pref.nara.jp/'"
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import sickbedsSummary from '@/data/sickbeds_summary.json'
+import Data from '@/data/data.json'
 import CircleChart from '@/components/CircleChart.vue'
 import formatVariableGraph from '@/utils/formatVariableGraph'
 
@@ -37,10 +37,10 @@ export default {
   },
   data() {
     // 年代別陽性患者数
-    const sickbedsGraph = formatVariableGraph(sickbedsSummary.data)
+    const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
 
     const data = {
-      sickbedsSummary,
+      Data,
       sickbedsGraph
     }
     return data
