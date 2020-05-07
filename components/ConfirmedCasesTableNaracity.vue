@@ -112,10 +112,6 @@ export default Vue.extend({
       type: Number,
       required: true
     },
-    重症: {
-      type: Number,
-      required: false
-    },
     宿泊療養: {
       type: Number,
       required: true
