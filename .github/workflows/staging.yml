@@ -26,6 +26,19 @@ jobs:
 
       - run: yarn install --frozen-lockfile
       - run: yarn run test
+
+      - name: Fetch & build data
+        run: |
+          # 奈良市データを所定のサーバーから取得 (TODO: newsが上記処理と重複しているのを直す)
+          rm data/data.json
+          rm data/news.json
+          rm data/data_naracity.json
+          rm data/naracity.json
+          curl -L https://stopcovid19.code4nara.org/api/data.json -o data/data.json
+          curl -L https://stopcovid19.code4nara.org/api/news.json -o data/news.json
+          curl -L https://stopcovid19.code4nara.org/api/data_naracity.json -o data/data_naracity.json
+          curl -L https://stopcovid19.code4nara.org/api/naracity.json -o data/naracity.json
+
       - run: yarn run generate:deploy --fail-on-page-error
       - run: "echo \"User-agent: *\nDisallow *\" > ./dist/robots.txt"
 
@@ -34,3 +47,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages

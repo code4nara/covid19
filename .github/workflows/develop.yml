@@ -38,15 +38,6 @@ jobs:
           curl -L https://stopcovid19.code4nara.org/api/news.json -o data/news.json
           curl -L https://stopcovid19.code4nara.org/api/data_naracity.json -o data/data_naracity.json
           curl -L https://stopcovid19.code4nara.org/api/naracity.json -o data/naracity.json
-        env:
-          GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
-          COVID19_JSON2CSV_OUTPUT_DATA: data/data.json
-          COVID19_JSON2CSV_OUTPUT_SICKBEDS_SUMMARY: data/sickbeds_summary.json
-          COVID19_JSON2CSV_OUTPUT_NEWS: data/news.json
-          COVID19_JSON2CSV_SHEET_ID: 1C07ojkwER8BiAjLBxlzJkfvgM5jxUCLrdtI7wtctTIY
-          COVID19_JSON2CSV_SHEET_RANGE_PATIENTS: 01.陽性患者の属性!A3:O130000
-          COVID19_JSON2CSV_SHEET_RANGE_HOSPITALIZATION: 入院患者の状況!A3:I3
-          COVID19_JSON2CSV_SHEET_RANGE_NEWS: 新着情報!A2:C1000
 
       - run: yarn run generate:deploy --fail-on-page-error
       - run: "echo \"User-agent: *\nDisallow *\" > ./dist/robots.txt"
