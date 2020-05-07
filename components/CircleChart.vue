@@ -8,6 +8,7 @@
     :source-url="sourceUrl"
   >
     <template v-slot:button>
+      <!--
       <ul :class="$style.GraphDesc">
         <i18n tag="li" path="（注）病床数は{data}の入院可能病床数">
           <a
@@ -17,10 +18,11 @@
             rel="noopener"
             place="data"
           >
-            奈良市オープンデータ
+            奈良県オープンデータ
           </a>
         </i18n>
       </ul>
+      !-->
     </template>
     <pie-chart
       :style="{ display: canvas ? 'block' : 'none' }"
