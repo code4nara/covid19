@@ -18,8 +18,8 @@
 
 <script>
 // import mainSummary from '@/data/main_summary.json'
-// import DataNaracity from '@/data/data_naracity.json'
-import DataNaracity from '@/data/naracity.json'
+import DataNaracity from '@/data/data_naracity.json'
+// import DataNaracity from '@/data/naracity.json'
 import formatConfirmedCasesNaracity from '@/utils/formatConfirmedCasesNaracity'
 import ConfirmedCasesCardNaracity from '@/components/ConfirmedCasesCardNaracity.vue'
 import ConfirmedCasesTableNaracity from '@/components/ConfirmedCasesTableNaracity.vue'
