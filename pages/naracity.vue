@@ -46,7 +46,7 @@
           :title-id="'number-of-tested'"
           :chart-id="'time-bar-chart-inspections'"
           :chart-data="inspectionsGraph"
-          :date="Data.inspections_summary.date"
+          :date="Data.inspections.date"
           :unit="'件'"
           :source-url="'https://www.city.nara.lg.jp/'"
           :source-text="'奈良市提供のデータを利用'"
@@ -83,7 +83,7 @@
 </template>
 
 <script>
-import dayjs from 'dayjs'
+// import dayjs from 'dayjs'
 
 import PageHeader from '@/components/PageHeader.vue'
 import TimeBarChart from '@/components/TimeBarChart.vue'
@@ -95,7 +95,7 @@ import formatTable from '@/utils/formatTable'
 import ConfirmedCasesDetailsCardNaracity from '@/components/cards/ConfirmedCasesDetailsCardNaracity.vue'
 
 import Data from '@/data/data_naracity.json'
-import DataCity from '@/data/naracity.json'
+// import DataCity from '@/data/naracity.json'
 import News from '@/data/news_naracity.json'
 
 export default {
@@ -122,20 +122,21 @@ export default {
     const querentsGraph = formatGraph(Data.querents.data)
 
     // 検査実施日別グラフ
-    const inspectionsGraph = formatGraph(Data.inspections_summary.data)
+    const inspectionsGraph = formatGraph(Data.inspections.data)
 
     //
     const sumInfoOfPatients = {
       // lText: Data.main_summary.children[0].陽性患者数 ,
       // attr陽性患者数 の値を直接取得
       lText: Data.main_summary.children[0].value,
-      sText: dayjs(Date.parse(Data.main_summary.date)).format('M/D') + '現在',
+      // sText: dayjs(Date.parse(Data.main_summary.date)).format('M/D') + '現在',
+      sText: Data.main_summary.date + '現在',
       unit: '人'
     }
 
     const data = {
       Data,
-      DataCity,
+      // DataCity,
       patientsTable,
       patientsGraph,
       querentsGraph,
