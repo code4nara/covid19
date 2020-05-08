@@ -33,11 +33,9 @@ jobs:
           rm data/data.json
           rm data/news.json
           rm data/data_naracity.json
-          rm data/naracity.json
           curl -L https://stopcovid19.code4nara.org/api/data.json -o data/data.json
           curl -L https://stopcovid19.code4nara.org/api/news.json -o data/news.json
           curl -L https://stopcovid19.code4nara.org/api/data_naracity.json -o data/data_naracity.json
-          curl -L https://stopcovid19.code4nara.org/api/naracity.json -o data/naracity.json
 
       - run: yarn run generate:deploy --fail-on-page-error
       - run: "echo \"User-agent: *\nDisallow *\" > ./dist/robots.txt"
