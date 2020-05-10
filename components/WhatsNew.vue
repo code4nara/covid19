@@ -48,7 +48,7 @@ export default {
   },
   computed: {
     limitCount() {
-      return this.items.slice(0, 5)
+      return this.items.slice(0, 2)
     }
   },
   methods: {
