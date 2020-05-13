@@ -46,11 +46,13 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
 
-      - name: ssh key generate
-        run: echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
+      - name: ssh key generate and exec rsyc
+        run: |
+	  echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
+          rsync -rptgDvz --delete -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" dist/* ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test/
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     
-      - name: rsync deploy test
-        run: rsync -rptgDvz --delete -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" dist/data ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test
+
+
 
