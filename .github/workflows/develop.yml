@@ -29,7 +29,7 @@ jobs:
 
       - name: Fetch & build data
         run: |
-          # 奈良市データを所定のサーバーから取得 (TODO: newsが上記処理と重複しているのを直す)
+          # 奈良市データを所定のサーバーから取得
           rm data/data.json
           rm data/news.json
           rm data/data_naracity.json
@@ -54,4 +54,5 @@ jobs:
       - name: rsync deploy test
         uses: peaceiris/actions-gh-pages@v3
         with:
-          run: rsync -auzrv -e "ssh -i ~/.ssh/id_25519_github -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" ./data/* ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test/
+          run: rsync -rptgDvz --delete -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" data ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test
+
