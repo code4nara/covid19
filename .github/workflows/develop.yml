@@ -52,7 +52,6 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
     
       - name: rsync deploy test
-        uses: peaceiris/actions-gh-pages@v3
         with:
-          run: rsync -rptgDvz --delete -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" data ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test
+          run: rsync -rptgDvz --delete -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" dist/data ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test
 
