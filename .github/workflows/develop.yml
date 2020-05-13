@@ -45,4 +45,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
-          publish_branch: dev-pages
+
+      - name: rsync deploy test
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          rsync -auzrv -e "ssh -i ~/.ssh/id_25519_github -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" ./data/* ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test/
