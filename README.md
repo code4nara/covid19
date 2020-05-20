@@ -7,7 +7,6 @@ Issues にあるいろいろな修正にご協力いただけると嬉しいで�
 
 詳しくは[貢献の仕方](./.github/CONTRIBUTING.md)を御覧ください。
 
-
 ## 行動原則
 詳しくは[サイト構築にあたっての行動原則](./.github/CODE_OF_CONDUCT.md)を御覧ください。
 
