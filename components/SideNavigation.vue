@@ -140,7 +140,7 @@ export default {
             'For those concerned about novel coronavirus infections'
           ),
           link:
-            'http://www.pref.nara.jp/secure/226888/nara20200501coronanagare.pdf'
+            'http://www.pref.nara.jp/secure/226888/02_相談や受診の流れ0515.pdf'
         },
         {
           icon: 'mdi-account-multiple',
