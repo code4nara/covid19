@@ -139,7 +139,8 @@ export default {
           title: this.$t(
             'For those concerned about novel coronavirus infections'
           ),
-          link: this.localePath('/flow')
+          link:
+            'http://www.pref.nara.jp/secure/226888/nara20200501coronanagare.pdf'
         },
         {
           icon: 'mdi-account-multiple',
