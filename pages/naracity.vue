@@ -136,6 +136,7 @@ export default {
 
     const data = {
       Data,
+      // DataCity,
       patientsTable,
       patientsGraph,
       querentsGraph,
