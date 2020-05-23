@@ -77,7 +77,6 @@ jobs:
           publish_dir: ./dist
           publish_branch: production
 
-	 
       - name: Update deploy status to success|failure|cancelled
         if: always()
         uses: rsotnychenko/deployment-status-update@0.1.3
