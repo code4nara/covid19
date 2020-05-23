@@ -57,8 +57,8 @@
           :chart-data="inspectionsGraph"
           :date="Data.inspections.date"
           :unit="'件'"
-          :source-url="'https://www.city.nara.lg.jp/'"
-          :source-text="'奈良市提供のデータを利用'"
+          :source-url="'http://www.pref.nara.jp/1652.htm'"
+          :source-text="'奈良県の公開情報を利用'"
         />
       </v-col>
       <!--
