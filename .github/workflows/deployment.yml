@@ -55,13 +55,13 @@ jobs:
         if: github.event.deployment.ref == 'development'
         run: "echo \"User-agent: *\nDisallow *\" > ./dist/robots.txt"
 
-      #- name: deploy for development
-      #  if: github.event.deployment.ref == 'development'
-      #  uses: peaceiris/actions-gh-pages@v3
-      #  with:
-      #    github_token: ${{ secrets.GITHUB_TOKEN }}
-      #    publish_dir: ./dist
-      #    publish_branch: dev-pages
+      - name: deploy for development
+        if: github.event.deployment.ref == 'development'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: dev-pages
 
       #- name: rsync deploy for development
       #  if: github.event.deployment.ref == 'development'
