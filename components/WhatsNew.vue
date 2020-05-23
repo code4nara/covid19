@@ -11,8 +11,8 @@
         <v-icon size="20" class="WhatsNew-link-to-emergency-page-icon">
           mdi-bullhorn
         </v-icon>
-        <external-link url="http://www.pref.nara.jp/55364.htm">
-          {{ $t('奈良県対処方針（5.15方針）') }}
+        <external-link url="http://www.pref.nara.jp/55426.htm">
+          {{ $t('奈良県対処方針（5.22方針）') }}
         </external-link>
       </span>
     </div>

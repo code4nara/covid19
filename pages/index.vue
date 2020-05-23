@@ -49,17 +49,19 @@
           :source-text="'奈良県の公開情報を利用'"
         />
       </v-col>
-      <!--
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="PCR検査実施数"
           :title-id="'number-of-tested'"
           :chart-id="'time-bar-chart-inspections'"
-          :chart-data="contactsGraph"
-          :date="Data.inspections_summary.date"
+          :chart-data="inspectionsGraph"
+          :date="Data.inspections.date"
           :unit="'件'"
+          :source-url="'http://www.pref.nara.jp/1652.htm'"
+          :source-text="'奈良県の公開情報を利用'"
         />
       </v-col>
+      <!--
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="新型コロナコールセンター相談件数"
@@ -137,13 +139,17 @@ export default {
 
     // 相談件数
     //  const contactsGraph = formatGraph(Data.contacts.data)
+
+    // 相談件数
+    //  const contactsGraph = formatGraph(Data.contacts.data)
     // 帰国者・接触者電話相談センター相談件数
     //  const querentsGraph = formatGraph(Data.querents.data)
     // 名古屋市営地下鉄の利用者数の推移
     // const metroGraph = MetroData
 
     // 検査実施日別グラフ
-    //  const inspectionsGraph = formatGraph(Data.inspections_summary.data)
+    const inspectionsGraph = formatGraph(Data.inspections.data)
+    // 検査実施日別グラフ
     // const inspectionsGraph = [
     //   Data.inspections_summary.data['県内'],
     //   Data.inspections_summary.data['その他']
@@ -180,7 +186,7 @@ export default {
       //  contactsGraph,
       //  querentsGraph,
       // metroGraph,
-      //  inspectionsGraph,
+      inspectionsGraph,
       // inspectionsItems,
       // inspectionsLabels,
       // confirmedCases,
