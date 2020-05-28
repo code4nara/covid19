@@ -145,12 +145,12 @@ export default {
         {
           icon: 'mdi-account-multiple',
           title: this.$t('Departures and Contact Person Consultation Center'),
-          link: 'http://www.pref.nara.jp/#003'
+          link: 'http://www.pref.nara.jp/55410.htm#003'
         },
         {
           icon: 'mdi-account-multiple',
           title: this.$t('General Telephone Consultation'),
-          link: 'http://www.pref.nara.jp/#002',
+          link: 'http://www.pref.nara.jp/55410.htm#002',
           divider: true
         },
         {
@@ -164,7 +164,7 @@ export default {
         },
         {
           title: this.$t('for Enterprises and Employees'),
-          link: 'http://www.pref.nara.jp/#007'
+          link: 'http://www.pref.nara.jp/55408.htm'
         },
         {
           title: this.$t('Telephone consultation on labor-related matter'),
