@@ -126,12 +126,7 @@ export default {
         {
           icon: 'mdi-chart-timeline-variant',
           title: this.$t('The latest updates of NaraPref'),
-          link: '/'
-        },
-        {
-          icon: 'mdi-chart-timeline-variant',
-          title: this.$t('The latest updates of NaraCity'),
-          link: '/naracity',
+          link: '/',
           divider: true
         },
         {
@@ -169,8 +164,7 @@ export default {
         {
           title: this.$t('Telephone consultation on labor-related matter'),
           link:
-            'https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/000611858.pdf',
-          divider: true
+            'https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/000611858.pdf'
         },
         {
           title: this.$t('Board of Education Announcement'),
