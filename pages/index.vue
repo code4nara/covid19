@@ -8,8 +8,8 @@
     <whats-new class="mb-4" :items="newsItems" />
     <v-row class="DataBlock">
       <confirmed-cases-details-card
-        :source-url="'http://www.pref.nara.jp/1652.htm'"
-        :source-text="'奈良県の公開情報を利用'"
+        :source-url="'http://www.pref.nara.jp/55168.htm'"
+        :source-text="'奈良県のオープンデータを利用'"
       />
       <!-- <v-col cols="12" md="6" class="DataCard">
         <svg-card
@@ -32,8 +32,8 @@
           :date="Data.patients_summary.date"
           :unit="'人'"
           :url="'http://www.pref.nara.jp/'"
-          :source-url="'http://www.pref.nara.jp/1652.htm'"
-          :source-text="'奈良県の公開情報を利用'"
+          :source-url="'http://www.pref.nara.jp/55168.htm'"
+          :source-text="'奈良県のオープンデータを利用'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
@@ -45,8 +45,8 @@
           :date="Data.patients.date"
           :info="sumInfoOfPatients"
           :url="'http://www.pref.nara.jp/'"
-          :source-url="'http://www.pref.nara.jp/1652.htm'"
-          :source-text="'奈良県の公開情報を利用'"
+          :source-url="'http://www.pref.nara.jp/55168.htm'"
+          :source-text="'奈良県のオープンデータを利用'"
         />
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
@@ -57,8 +57,8 @@
           :chart-data="inspectionsGraph"
           :date="Data.inspections.date"
           :unit="'件'"
-          :source-url="'http://www.pref.nara.jp/1652.htm'"
-          :source-text="'奈良県の公開情報を利用'"
+          :source-url="'http://www.pref.nara.jp/55168.htm'"
+          :source-text="'奈良県のオープンデータを利用'"
         />
       </v-col>
       <!--
@@ -86,8 +86,8 @@
       </v-col>
       -->
       <patients-and-sickbeds
-        :source-url="'http://www.pref.nara.jp/'"
-        :source-text="'奈良県の公開情報を利用'"
+        :source-url="'http://www.pref.nara.jp/55168.htm'"
+        :source-text="'奈良県のオープンデータを利用'"
         :date="Data.sickbeds_summary.date"
       />
     </v-row>
