@@ -122,11 +122,12 @@ export default class InspectionPersonsChart extends Vue {
 
   private readonly showSelector = true
   private dataKind: DataKind = 'daily-transition'
+  /*
   private readonly dataKinds = [
     { key: 'weekly-transition', label: '週別' } as SelectorItem,
     { key: 'daily-transition', label: '日別' } as SelectorItem
   ]
-
+*/
   private readonly chartDataSet = new Map<DataKind, GraphData>()
 
   private get displayTitle(): string {
@@ -238,6 +239,7 @@ export default class InspectionPersonsChart extends Vue {
       .select((_, index) => source.skip(index).take(7))
       .select(d => {
         const first = d.first()
+        /*
         let ave
         if (d.count() === 7) {
           const grp = d.where(
@@ -250,12 +252,13 @@ export default class InspectionPersonsChart extends Vue {
               ? undefined
               : Math.round((sumPositives / sumTotal) * 1000) / 10
         }
+ */
 
         return {
           date: dayjs(dayjs(first['日付']).format('YYYY-MM-DD')), // 時刻を切り落とす
           positives: Number(first['陽性者数']),
           persons: Number(first['検査人数']),
-          average: ave,
+          average: Number(first['陽性率']) * 100,
           uncertain: d.any(x => x['非確定'] !== '')
         }
       })

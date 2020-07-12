@@ -72,6 +72,7 @@ export type InspectionPersonsSummaryDaily = {
   日付: string
   検査人数?: number
   陽性者数?: number
+  陽性率?: number
   非確定?: string
 }
 
