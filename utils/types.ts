@@ -41,7 +41,7 @@ export type InspectionsSummaryWeekly = {
   小計: number
   合算?: string
 }
-
+/*
 export type DataWeekly = {
   // eslint-disable-next-line camelcase
   patients_summary: {
@@ -54,7 +54,7 @@ export type DataWeekly = {
     data: InspectionsSummaryWeekly[]
   }
 }
-
+*/
 export type MainSummaryDataType = {
   更新日時: string
   検査実施人数: number
