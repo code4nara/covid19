@@ -45,7 +45,7 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { convertDatetimeToISO8601Format } from '@/utils/formatDate'
+import { convertDateToISO8601Format } from '@/utils/formatDate'
 
 @Component
 export default class DataView extends Vue {
@@ -57,7 +57,7 @@ export default class DataView extends Vue {
   @Prop() private sourceUrl!: string
   @Prop() private note!: string
 
-  formattedDate: string = convertDatetimeToISO8601Format(this.date)
+  formattedDate: string = convertDateToISO8601Format(this.date)
 }
 </script>
 
