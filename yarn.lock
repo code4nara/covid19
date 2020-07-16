@@ -6748,6 +6748,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+linq@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/linq/-/linq-3.2.2.tgz#c012291054f54d78f608a37f7bceec95dca09e40"
+  integrity sha512-AtVkCFwg7dizILt88ent7Bng1OLAnKMWBOLo9Kh7ZPFK8OcfYGi2FEzmr66QJtV7uBYZVf19AbVs0B14rIUi+w==
+
 lint-staged@^10.0.8:
   version "10.2.2"
   resolved "https://registry.yarnpkg.com/lint-staged/-/lint-staged-10.2.2.tgz#901403c120eb5d9443a0358b55038b04c8a7db9b"
