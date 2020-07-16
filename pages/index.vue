@@ -61,6 +61,16 @@
           :source-text="'奈良県のオープンデータを利用'"
         />
       </v-col>
+
+      <v-col cols="12" md="6" class="DataCard">
+        <inspection-persons-chart
+          :date="Data.inspection_persons_summary.date"
+          :daily-data="Data.inspection_persons_summary.data"
+          :source-url="'http://www.pref.nara.jp/55168.htm'"
+          :source-text="'奈良県のオープンデータを利用'"
+        />
+      </v-col>
+
       <!--
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
@@ -114,6 +124,8 @@ import News from '@/data/news.json'
 // import SvgCard from '@/components/SvgCard.vue'
 // import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
 import PatientsAndSickbeds from '@/components/cards/PatientsAndSickbeds.vue'
+import InspectionPersonsChart from '@/components/InspectionPersonsChart.vue'
+// import weeklizer from '@/utils/weeklizer'
 
 export default {
   components: {
@@ -127,9 +139,13 @@ export default {
     DataTable,
     // SvgCard,
     // ConfirmedCasesTable
+    InspectionPersonsChart,
     PatientsAndSickbeds
   },
   data() {
+    // 日次データを週次化
+    // const dataWeekly = weeklizer(Data) // Data_weekly.json 化までのつなぎ
+
     // 感染者数グラフ
     const patientsGraph = formatGraph(Data.patients_summary.data)
     // 感染者数
@@ -180,6 +196,7 @@ export default {
 
     const data = {
       Data,
+      //      dataWeekly,
       patientsTable,
       patientsGraph,
       // dischargesGraph,
