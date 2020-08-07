@@ -1,5 +1,12 @@
 <template>
-  <data-view :title="title" :date="date" :url="url">
+  <data-view
+    :title="title"
+    :title-id="titleId"
+    :date="date"
+    :url="url"
+    :source-text="sourceText"
+    :source-url="sourceUrl"
+  >
     <template v-slot:button>
       <span />
     </template>
@@ -33,6 +40,9 @@
       white-space: nowrap;
       color: $gray-2;
       font-size: 12px;
+      &.text-center {
+        text-align: center;
+      }
     }
     tbody {
       tr {
@@ -41,6 +51,9 @@
           padding: 8px 10px;
           height: auto;
           font-size: 12px;
+          &.text-center {
+            text-align: center;
+          }
         }
         &:nth-child(odd) {
           td {
@@ -56,6 +69,11 @@
     }
   }
 }
+.note {
+  padding: 8px;
+  font-size: 12px;
+  color: #808080;
+}
 </style>
 
 <script>
@@ -66,6 +84,10 @@ export default {
   components: { DataView, DataViewBasicInfoPanel },
   props: {
     title: {
+      type: String,
+      default: ''
+    },
+    titleId: {
       type: String,
       default: ''
     },
@@ -83,6 +105,16 @@ export default {
       default: () => {}
     },
     url: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    sourceText: {
+      type: String,
+      required: false,
+      default: ''
+    },
+    sourceUrl: {
       type: String,
       required: false,
       default: ''

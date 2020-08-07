@@ -2,7 +2,7 @@
   <div class="SideNavigation">
     <div class="SideNavigation-HeadingContainer sp-flex">
       <v-icon
-        class="SideNavigation-HeadingIcon sp-inline-block"
+        class="SideNavigation-HeadingIcon pc-none"
         :aria-label="$t('Navi Open')"
         @click="openNavi"
       >
@@ -10,7 +10,7 @@
       </v-icon>
       <nuxt-link to="/" class="SideNavigation-HeadingLink">
         <div class="SideNavigation-Logo">
-          <img src="/logo.svg" :alt="$t('Tokyo')" />
+          <img src="/logo.png" :alt="$t('Nara')" />
         </div>
         <h1 class="SideNavigation-Heading">
           {{ $t('COVID-19') }}<br />{{ $t('Measures site') }}
@@ -20,7 +20,7 @@
     <v-divider class="SideNavigation-HeadingDivider" />
     <div class="sp-none" :class="{ open: isNaviOpen }">
       <v-icon
-        class="SideNavigation-ListContainerIcon sp-inline-block"
+        class="SideNavigation-ListContainerIcon pc-none"
         :aria-label="$t('Navi Close')"
         @click="closeNavi"
       >
@@ -40,24 +40,38 @@
       <div class="SideNavigation-Footer">
         <div class="SideNavigation-SocialLinkContainer">
           <a
-            href="https://line.me/R/ti/p/%40822sysfc"
-            target="_blank"
-            rel="noopener"
-          >
-            <img src="/line.png" alt="LINE" />
-          </a>
-          <a
-            href="https://twitter.com/tokyo_bousai"
+            href="https://twitter.com/narakencyou"
             target="_blank"
             rel="noopener"
           >
             <img src="/twitter.png" alt="Twitter" />
           </a>
+          <a
+            href="https://www.facebook.com/office.pref.nara/"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="/facebook.png" alt="Facebook" />
+          </a>
+          <a
+            href="https://line.me/R/ti/p/%40688bjyqz"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="/line.png" alt="Facebook" />
+          </a>
+          <a
+            href="https://github.com/code4nara/covid19"
+            target="_blank"
+            rel="noopener"
+          >
+            <img src="/github.png" alt="GitHub" />
+          </a>
         </div>
-        <small class="SideNavigation-Copyright" lang="en">
+        <!-- <small class="SideNavigation-Copyright" lang="en">
           Copyright &copy; 2020 Tokyo Metropolitan Government. All Rights
           Reserved.
-        </small>
+        </small> -->
       </div>
     </div>
   </div>
@@ -68,21 +82,27 @@
   "ja": {
     "Navi Open": "サイドメニュー項目を開く",
     "Navi Close": "サイドメニュー項目を閉じる",
-    "Tokyo": "東京都",
+    "Nara": "奈良県",
     "COVID-19": "新型コロナウイルス感染症",
-    "Measures site": "対策サイト",
-    "Tokyo Metropolitan Government": "東京都",
+    "Measures site": "まとめサイト（非公式）",
+    "Nara Prefecture Government": "奈良県",
     "Tokyo COVID-19 Task Force": "新型コロナウイルス感染症対策本部",
-    "The latest updates": "都内の最新感染動向",
-    "If you have any symptoms": "新型コロナウイルス感染症が心配なときに",
+    "The latest updates of NaraPref": "奈良県内の最新感染動向",
+    "The latest updates of NaraCity": "奈良市内の最新感染動向",
+    "For those concerned about novel coronavirus infections": "新型コロナウイルス感染症が心配なときに",
     "for Families with children": "お子様をお持ちの皆様へ",
-    "for Citizens": "都民の皆様へ",
-    "for Enterprises and Employees": "企業の皆様・はたらく皆様へ",
-    "Official statements from Task Force": "東京都新型コロナウイルス感染症対策本部報",
-    "Cancelled public events": "東京都主催等 中止又は延期するイベント等",
-    "Government official website": "東京都公式ホームページ",
-    "Message from Governor Koike": "知事からのメッセージ",
-    "About us": "当サイトについて"
+    "school activity status": "各種学校の休校情報",
+    "for Citizens": "県民の皆様へ",
+    "for Enterprises and Employees": "中小企業・小規模事業者の皆様へ",
+    "Official statements from Task Force": "奈良県総務部知事公室防災統括室",
+    "Government official website": "奈良県公式ホームページ",
+    "General Telephone Consultation": "一般電話窓口",
+    "Departures and Contact Person Consultation Center": "帰国者・接触者相談センター",
+    "Board of Education Announcement": "教育委員会の発表",
+    "Telephone consultation on labor-related matter": "労働関係の電話相談",
+    "About us": "当サイトについて",
+    "Municipalities": "奈良県内各市町村の関連ページ",
+    "Other local Government": "他自治体の対策サイト"
   }
 }
 </i18n>
@@ -105,56 +125,69 @@ export default {
       return [
         {
           icon: 'mdi-chart-timeline-variant',
-          title: this.$t('The latest updates'),
-          link: '/'
+          title: this.$t('The latest updates of NaraPref'),
+          link: '/',
+          divider: true
         },
         {
           icon: 'covid',
-          title: this.$t('If you have any symptoms'),
-          link: '/flow',
-          divider: true
-        },
-        {
-          icon: 'parent',
-          title: this.$t('for Families with children'),
-          link: '/parent'
+          title: this.$t(
+            'For those concerned about novel coronavirus infections'
+          ),
+          link:
+            'http://www.pref.nara.jp/secure/226888/02_相談や受診の流れ0515.pdf'
         },
         {
           icon: 'mdi-account-multiple',
-          title: this.$t('for Citizens'),
-          link: 'https://www.metro.tokyo.lg.jp/tosei/tosei/news/2019-ncov.html'
+          title: this.$t('Departures and Contact Person Consultation Center'),
+          link: 'http://www.pref.nara.jp/55410.htm#003'
         },
         {
-          icon: 'mdi-domain',
-          title: this.$t('for Enterprises and Employees'),
-          link: '/worker',
+          icon: 'mdi-account-multiple',
+          title: this.$t('General Telephone Consultation'),
+          link: 'http://www.pref.nara.jp/55410.htm#002',
           divider: true
         },
         {
-          title: this.$t('Official statements from Task Force'),
-          link:
-            'https://www.bousai.metro.tokyo.lg.jp/taisaku/saigai/1007261/index.html'
+          title: this.$t('Government official website'),
+          link: 'http://www.pref.nara.jp/'
         },
         {
-          title: this.$t('Cancelled public events'),
-          link:
-            'https://www.seisakukikaku.metro.tokyo.lg.jp/information/event02.html'
+          title: this.$t('Municipalities'),
+          link: '/municipalities',
+          divider: true
         },
         {
-          title: this.$t('Message from Governor Koike'),
+          title: this.$t('for Enterprises and Employees'),
+          link: 'http://www.pref.nara.jp/55408.htm'
+        },
+        {
+          title: this.$t('Telephone consultation on labor-related matter'),
           link:
-            'https://www.metro.tokyo.lg.jp/tosei/governor/governor/katsudo/2020/03/03_00.html'
+            'https://jsite.mhlw.go.jp/nara-roudoukyoku/content/contents/000611858.pdf'
+        },
+        {
+          title: this.$t('Board of Education Announcement'),
+          link: 'http://www.pref.nara.jp/kyoiku/'
+        },
+        {
+          title: this.$t('school activity status'),
+          link: 'https://crssrds.jp/school_info/',
+          divider: true
         },
         {
           title: this.$t('About us'),
           link: '/about'
         },
         {
-          title: this.$t('Government official website'),
-          link: 'https://www.metro.tokyo.lg.jp/',
-          divider: true
+          title: this.$t('Other local Government'),
+          link:
+            'https://github.com/tokyo-metropolitan-gov/covid19/blob/development/FORKED_SITES.md'
         }
       ]
+    },
+    isClass() {
+      return item => (item.title.charAt(0) === '【' ? 'kerningLeft' : '')
     }
   },
   methods: {
@@ -182,7 +215,6 @@ export default {
     }
   }
   &-HeadingIcon {
-    display: none;
     margin-right: 16px;
   }
   &-HeadingLink {
@@ -193,7 +225,6 @@ export default {
     text-decoration: none;
   }
   &-ListContainerIcon {
-    display: none;
     margin: 24px 16px 0;
   }
   &-ListItemContainer {
@@ -249,21 +280,25 @@ export default {
 }
 .open {
   @include lessThan($small) {
-    position: absolute;
+    position: fixed;
+    overflow: auto;
     top: 0;
+    bottom: 0;
     left: 0;
     display: block !important;
     width: 100%;
-    z-index: 100;
+    z-index: z-index-of(opened-side-navigation);
     background-color: $white;
+  }
+}
+@include largerThan($small) {
+  .pc-none {
+    display: none;
   }
 }
 @include lessThan($small) {
   .sp-flex {
     display: flex;
-  }
-  .sp-inline-block {
-    display: inline-block;
   }
   .sp-none {
     display: none;

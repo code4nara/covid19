@@ -1,27 +1,25 @@
-# 東京都 新型コロナウイルス感染症対策サイト
+# 奈良県 新型コロナウイルス感染症対策サイト（非公式）
 
-![](https://github.com/tokyo-metropolitan-gov/covid19/workflows/production%20deploy/badge.svg)
+### 日本語
 
-![東京都 新型コロナウイルス感染症対策サイト](https://user-images.githubusercontent.com/1301149/75629392-1d19d900-5c25-11ea-843d-2d4376e3a560.png)
-
-
-## How to Contribute / 貢献の仕方
+## 貢献の仕方
 Issues にあるいろいろな修正にご協力いただけると嬉しいです。
 
-詳しくは[How to contribute](https://github.com/tokyo-metropolitan-gov/covid19/wiki/How-to-contribute)を御覧ください。
+詳しくは[貢献の仕方](./.github/CONTRIBUTING.md)を御覧ください。
 
-All contributions are welcome!
-Please check [How to contribute](https://github.com/tokyo-metropolitan-gov/covid19/wiki/How-to-contribute%5BEnglish%5D) for details.
+## 行動原則
+詳しくは[サイト構築にあたっての行動原則](./.github/CODE_OF_CONDUCT.md)を御覧ください。
 
-## License / ライセンス
-本ソフトウェアは、MITライセンスの元提供されています。 
-This software is released under the MIT License.
+## ライセンス
+本ソフトウェアは、[MITライセンス](./LICENSE.txt)の元提供されています。
 
-## For Developers / 開発者向け情報
+## 開発者向け情報
 
-### How to Set Up Environments / 環境構築の手順
+### 環境構築の手順
 
-**Use yarn / yarn を使う場合**
+- 必要となるNode.jsのバージョン: 10.19.0以上
+
+**yarn を使う場合**
 ``` bash
 # install dependencies
 $ yarn install
@@ -30,29 +28,15 @@ $ yarn install
 $ yarn dev
 ```
 
-**Use docker / docker compose を使う場合**
+**docker compose を使う場合**
 ```bash
-# Please run after checkout this repository
-$ docker-compose build
-$ docker-compose run --rm app yarn install
 # serve with hot reload at localhost:3000
-$ docker-compose up
+$ docker-compose up --build
 ```
 
-### Deployment to Staging & Production Environments / ステージング・本番環境への反映
+### 開発・本番環境への反映
 
-`master` ブランチがアップデートされると、自動的に `production` ブランチにHTML類がbuildされます。そして、本番サイト https://stopcovid19.metro.tokyo.lg.jp/ が更新されます。
+`master` ブランチがアップデートされると、自動的に `production` ブランチにHTML類がbuildされ、本番サイト http://stopcovid19.code4nara.org/ を更新するように準備中です。
 
-`staging` ブランチがアップデートされると、自動的に `gh-pages` ブランチにHTML類がbuildされます。そして、ステージングサイト https://stg-covid19-tokyo.netlify.com/ が更新されます。
+`development` ブランチがアップデートされると、自動的に `dev-pages` ブランチにHTML類がbuildされます。そして、開発用サイト https://upbeat-volhard-740574.netlify.com/ が更新されます。
 
-`development` ブランチがアップデートされると、自動的に `dev-pages` ブランチにHTML類がbuildされます。そして、開発用サイト https://dev-covid19-tokyo.netlify.com/ が更新されます。
-
-
-When `master` branch is updated, the HTML files will be automatically built onto `production` branch,
-and then the production site (https://stopcovid19.metro.tokyo.lg.jp/) will be also updated.
-
-When `staging` branch is updated, the HTML files will be automatically built onto `gh-pages` branch,
-and then the staging site (https://stg-covid19-tokyo.netlify.com/) will be also updated.
-
-When `development` branch is updated, the HTML files will be automatically built onto `dev-pages` branch,
-and then the development site (https://dev-covid19-tokyo.netlify.com/) will be also updated.

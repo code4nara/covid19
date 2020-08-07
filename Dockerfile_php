@@ -1,0 +1,19 @@
+FROM php:7.3.0-fpm-alpine3.8
+COPY --from=composer:1.9.3 /usr/bin/composer /usr/bin/composer
+
+RUN apk upgrade --update && \
+    apk --no-cache add icu-dev autoconf make g++ gcc zip libzip-dev unzip libjpeg-turbo-dev libpng-dev gmp-dev && \
+    docker-php-ext-install -j$(nproc) gd zip
+
+WORKDIR /app
+
+COPY ./data ./data
+COPY ./tool ./tool
+
+WORKDIR /app/tool
+
+RUN composer install
+
+WORKDIR /app
+
+CMD ["php", "./tool/convert.php"]

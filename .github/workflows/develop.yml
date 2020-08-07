@@ -26,7 +26,18 @@ jobs:
 
       - run: yarn install --frozen-lockfile
       - run: yarn run test
-      - run: yarn run generate --fail-on-page-error
+
+      - name: Fetch & build data
+        run: |
+          # 奈良市データを所定のサーバーから取得
+          rm data/data.json
+          rm data/news.json
+          rm data/data_naracity.json
+          curl -L https://stopcovid19.code4nara.org/api/data.json -o data/data.json
+          curl -L https://stopcovid19.code4nara.org/api/news.json -o data/news.json
+          curl -L https://stopcovid19.code4nara.org/api/data_naracity.json -o data/data_naracity.json
+
+      - run: yarn run generate:deploy --fail-on-page-error
       - run: "echo \"User-agent: *\nDisallow *\" > ./dist/robots.txt"
 
       - name: deploy
@@ -35,3 +46,14 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: dev-pages
+
+      #- name: ssh key generate and exec rsyc
+      #  run: |
+      #    echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
+      #    rsync -rptgDvz --delete -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" dist/* ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test/	  
+      #  env:
+      #    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+    
+
+
+

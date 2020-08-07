@@ -2,37 +2,62 @@
   <v-card class="DataView pa-1">
     <v-toolbar flat class="DataView-content">
       <div class="DataView-TitleContainer">
-        <v-toolbar-title>
+        <h3 :id="titleId" class="DataView-ToolbarTitle">
           {{ title }}
-        </v-toolbar-title>
+        </h3>
         <slot name="button" />
       </div>
       <v-spacer />
       <slot name="infoPanel" />
     </v-toolbar>
-    <v-card-text :class="$vuetify.breakpoint.xs ? 'DataView-CardTextForXS' : 'DataView-CardText'">
+    <v-card-text
+      :class="
+        $vuetify.breakpoint.xs ? 'DataView-CardTextForXS' : 'DataView-CardText'
+      "
+    >
       <slot />
     </v-card-text>
     <v-footer class="DataView-Footer">
-      <time :datetime="date">{{ date }} 更新</time>
-      <a v-if="url" class="OpenDataLink" :href="url" target="_blank" rel="noopener">オープンデータへのリンク
-        <v-icon class="ExternalLinkIcon" size="15">
-          mdi-open-in-new
-        </v-icon>
-      </a>
+      <div class="DataView-Footer-Note">
+        <span v-if="note">
+          <v-icon size="16">
+            mdi-information
+          </v-icon>
+          {{ note }}
+        </span>
+        <a
+          v-if="sourceUrl && sourceText"
+          :href="sourceUrl"
+          class="OpenDataLink"
+          target="_blank"
+          rel="noopener"
+        >
+          {{ sourceText }}
+          <v-icon size="12">
+            mdi-open-in-new
+          </v-icon>
+        </a>
+      </div>
+      <time :datetime="formattedDate">{{ date }} 時点</time>
     </v-footer>
   </v-card>
 </template>
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
+import { convertDateToISO8601Format } from '@/utils/formatDate'
 
 @Component
 export default class DataView extends Vue {
   @Prop() private title!: string
+  @Prop() private titleId!: string
   @Prop() private date!: string
-  @Prop() private url!: string
   @Prop() private info!: any // FIXME expect info as {lText:string, sText:string unit:string}
+  @Prop() private sourceText!: string
+  @Prop() private sourceUrl!: string
+  @Prop() private note!: string
+
+  formattedDate: string = convertDateToISO8601Format(this.date)
 }
 </script>
 
@@ -80,6 +105,11 @@ export default class DataView extends Vue {
   &-Title {
     @include card-h2();
   }
+  &-ToolbarTitle {
+    font-size: 1.25rem;
+    font-weight: normal;
+    line-height: 1.5;
+  }
   &-CardText {
     margin-bottom: 46px;
     margin-top: 35px;
@@ -94,19 +124,23 @@ export default class DataView extends Vue {
     @include font-size(12);
     color: $gray-3 !important;
     justify-content: space-between;
-    flex-direction: row-reverse;
+    flex-direction: row;
     .OpenDataLink {
       text-decoration: none;
       .ExternalLinkIcon {
         vertical-align: text-bottom;
       }
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    &-Note {
+      display: flex;
+      flex-direction: column;
     }
   }
 }
 .v-toolbar__content {
   height: auto !important;
-}
-.v-toolbar__title {
-  white-space: inherit !important;
 }
 </style>

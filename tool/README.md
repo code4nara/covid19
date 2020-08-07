@@ -1,3 +1,8 @@
+# misc
+
+This tool not for nara.
+see code4nara/covid19-nara-tools
+
 # Need
 
 - php 7.x

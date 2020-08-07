@@ -4,7 +4,7 @@ type DataType = {
 }
 
 type GraphDataType = {
-  label: string
+  label: Date
   transition: number
   cumulative: number
 }
@@ -21,7 +21,7 @@ export default (data: DataType[]) => {
       if (!isNaN(subTotal)) {
         patSum += subTotal
         graphData.push({
-          label: `${date.getMonth() + 1}/${date.getDate()}`,
+          label: date,
           transition: subTotal,
           cumulative: patSum
         })
