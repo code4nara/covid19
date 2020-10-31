@@ -51,7 +51,7 @@
       </v-col>
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
-          title="PCR検査実施数"
+          title="PCR等検査実施数"
           :title-id="'number-of-tested'"
           :chart-id="'time-bar-chart-inspections'"
           :chart-data="inspectionsGraph"
