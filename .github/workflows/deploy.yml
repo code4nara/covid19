@@ -29,6 +29,7 @@ jobs:
 
       - name: Fetch & build data
         run: |
+          # データを所定のサーバーから取得
           rm data/data.json
           rm data/news.json
           rm data/municipalities-data.json
