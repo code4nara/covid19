@@ -32,8 +32,10 @@ jobs:
           # データを所定のサーバーから取得
           rm data/data.json
           rm data/news.json
+          rm data/municipalities-data.json
           curl -L https://stopcovid19.code4nara.org/api/data.json -o data/data.json
           curl -L https://stopcovid19.code4nara.org/api/news.json -o data/news.json
+          curl -L https://stopcovid19.code4nara.org/api/municipalities-data.json -o data/municipalities-data.json
 
       - run: yarn run generate:deploy --fail-on-page-error
       - run: "echo \"User-agent: *\nDisallow *\" > ./dist/robots.txt"
@@ -48,10 +50,6 @@ jobs:
       #- name: ssh key generate and exec rsyc
       #  run: |
       #    echo "$SSH_PRIVATE_KEY" > key && chmod 600 key
-      #    rsync -rptgDvz --delete -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" dist/* ishizuka@stopcovid19.code4nara.org:/home/ishizuka/test/	  
+      #    rsync -rptgDvz --delete -e "ssh -i key -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no -p 65522" dist/* covid19@stopcovid19.code4nara.org:/usr/share/nginx/covid19-development/	  
       #  env:
       #    SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-    
-
-
-
