@@ -36,7 +36,9 @@ $ docker-compose up --build
 
 ### 開発・本番環境への反映
 
-`master` ブランチがアップデートされると、自動的に `production` ブランチにHTML類がbuildされ、本番サイト http://stopcovid19.code4nara.org/ を更新するように準備中です。
+`master` ブランチがアップデートされると、自動的に `production` ブランチにHTML類がbuildされ、本番サイト http://stopcovid19.code4nara.org/ を更新します。
+
+`staging` ブランチがアップデートされると、自動的に `gh-pages` ブランチにHTML類がビルドされ、捨て人ぐサイト http://covid19-staging.code4nara.org/ を更新します。
 
 `development` ブランチがアップデートされると、自動的に `dev-pages` ブランチにHTML類がbuildされます。そして、開発用サイト https://upbeat-volhard-740574.netlify.com/ が更新されます。
 
