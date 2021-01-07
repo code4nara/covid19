@@ -97,7 +97,7 @@
     "Official statements from Task Force": "奈良県総務部知事公室防災統括室",
     "Government official website": "奈良県公式ホームページ",
     "General Telephone Consultation": "一般電話窓口",
-    "Departures and Contact Person Consultation Center": "帰国者・接触者相談センター",
+    "Departures and Contact Person Consultation Center": "新型コロナ・発熱患者受診相談窓口",
     "Board of Education Announcement": "教育委員会の発表",
     "Telephone consultation on labor-related matter": "労働関係の電話相談",
     "About us": "当サイトについて",
