@@ -1,8 +1,8 @@
 name: Daily Deployment
 
 on:
-  schedule:
-    - cron: 0 12 * * *  # 日本時間20:00に実行
+#  schedule:
+#    - cron: 0 12 * * *  # 日本時間20:00に実行
 
 jobs:
   build:
