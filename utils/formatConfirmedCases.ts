@@ -21,6 +21,14 @@ type DataType = {
               ]
             },
             {
+              attr: '入院療養中数'
+              value: number
+            },
+            {
+              attr: '入院入所準備中数'
+              value: number
+            },
+            {
               attr: '宿泊療養'
               value: number
             },
@@ -67,8 +75,10 @@ export default (data: DataType) => {
     現在感染者数: data.children[0].children[0].value,
     入院中: data.children[0].children[0].children[0].value,
     重症: data.children[0].children[0].children[0].children[0].value,
-    自宅療養: data.children[0].children[0].children[2].value,
-    宿泊療養: data.children[0].children[0].children[1].value,
+    入院療養中数: data.children[0].children[0].children[1].value,
+    入院入所準備中数: data.children[0].children[0].children[2].value,
+    自宅療養: data.children[0].children[0].children[4].value,
+    宿泊療養: data.children[0].children[0].children[3].value,
     退院等累計: data.children[0].children[1].value,
     死亡: data.children[0].children[2].value
   }
