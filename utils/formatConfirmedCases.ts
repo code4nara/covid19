@@ -57,6 +57,8 @@ type ConfirmedCasesType = {
   現在感染者数: number
   入院中: number
   重症: number
+  入院療養中数: number
+  入院入所準備中数: number
   宿泊療養: number
   自宅療養: number
   退院等累計: number
