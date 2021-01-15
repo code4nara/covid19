@@ -3,9 +3,9 @@
     <li :class="[$style.box, $style.tall, $style.tested]">
       <div :class="[$style.pillar_tested]">
         <div :class="$style.content">
-          <span> {{ $t('感染者数') }}<br />({{ $t('累計') }}) </span>
+          <span> {{ $t('感染者') }}<br />({{ $t('累計') }}) </span>
           <span>
-            <strong>{{ 感染者数累計 }}</strong>
+            <strong>{{ 感染者数累計 }}<br /></strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -14,9 +14,9 @@
     <li :class="[$style.box, $style.tall, $style.parent, $style.confirmed]">
       <div :class="$style.pillar">
         <div :class="$style.content">
-          <span>{{ $t('感染者数') }}<br />({{ $t('現在') }})</span>
+          <span>{{ $t('感染者') }}<br />({{ $t('現在') }})</span>
           <span>
-            <strong>{{ 現在感染者数 }}</strong>
+            <strong>{{ 現在感染者数 }}<br /></strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -26,10 +26,10 @@
           <div :class="$style.pillar">
             <div :class="$style.content">
               <!-- eslint-disable vue/no-v-html-->
-              <span v-html="$t('入院中')" />
+              <span v-html="$t('入院・療養中')" />
               <!-- eslint-enable vue/no-v-html-->
               <span>
-                <strong>{{ 入院中 }}</strong>
+                <strong>{{ 入院療養中数 }}<br /></strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -39,10 +39,10 @@
           <div :class="$style.pillar">
             <div :class="$style.content">
               <!-- eslint-disable vue/no-v-html-->
-              <span v-html="$t('宿泊療養')" />
+              <span v-html="$t('入院・入所<br />準備中')" />
               <!-- eslint-enable vue/no-v-html-->
               <span>
-                <strong>{{ 宿泊療養 }}</strong>
+                <strong>{{ 入院入所準備中数 }}<br /></strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -52,10 +52,10 @@
           <div :class="$style.pillar">
             <div :class="$style.content">
               <!-- eslint-disable vue/no-v-html-->
-              <span v-html="$t('自宅療養')" />
+              <span v-html="$t('自宅<br />療養中')" />
               <!-- eslint-enable vue/no-v-html-->
               <span>
-                <strong>{{ 自宅療養 }}</strong>
+                <strong>{{ 自宅療養 }}<br /></strong>
                 <span :class="$style.unit">{{ $t('人') }}</span>
               </span>
             </div>
@@ -67,10 +67,11 @@
       <div :class="$style.pillar">
         <div :class="$style.content">
           <!-- eslint-disable vue/no-v-html-->
-          <span v-html="$t('亡くな<br />られた方')" />
+          <!-- <span v-html="$t('亡くな<br />られた方')" /> -->
+          <span v-html="$t('死亡')" />
           <!-- eslint-enable vue/no-v-html-->
           <span>
-            <strong>{{ 死亡 }}</strong>
+            <strong>{{ 死亡 }}<br /></strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -80,10 +81,11 @@
       <div :class="$style.pillar">
         <div :class="$style.content">
           <!-- eslint-disable vue/no-v-html-->
-          <span v-html="$t('退院<br />した方')" />
+          <!-- <span v-html="$t('退院<br />した方')" />	  -->
+          <span v-html="$t('退院')" />
           <!-- eslint-enable vue/no-v-html-->
           <span>
-            <strong>{{ 退院等累計 }}</strong>
+            <strong>{{ 退院等累計 }}<br /></strong>
             <span :class="$style.unit">{{ $t('人') }}</span>
           </span>
         </div>
@@ -111,6 +113,14 @@ export default Vue.extend({
       required: true
     },
     入院中: {
+      type: Number,
+      required: true
+    },
+    入院療養中数: {
+      type: Number,
+      required: true
+    },
+    入院入所準備中数: {
       type: Number,
       required: true
     },
@@ -243,7 +253,8 @@ $default-boxdiff: 35px;
     display: flex;
     flex: 0 0 auto;
     // [6列] 1/6セル
-    width: calc((100% - #{$default-bdw} * 3) / 6);
+    // width: calc((100% - #{$default-bdw} * 3) / 6);
+    width: calc((100% - #{$default-bdw} * 3) / 7);
     color: $gray-1;
   }
 
@@ -253,12 +264,16 @@ $default-boxdiff: 35px;
 
     > .pillar {
       // [3列] 1/3
-      width: calc((100% + #{$default-bdw} * 2) / 3 - #{$default-bdw} * 3);
+      // width: calc((100% + #{$default-bdw} * 2) / 3 - #{$default-bdw} * 3);
+      // [4列] 1/4
+      width: calc((100% + #{$default-bdw} * 3) / 4 - #{$default-bdw} * 4);
     }
 
     > .group {
       // [3列] 2/3
-      width: calc((100% + #{$default-bdw} * 2) / 3 * 2 + #{$default-bdw});
+      // width: calc((100% + #{$default-bdw} * 2) / 3 * 2 + #{$default-bdw});
+      // [4列] 1/4
+      width: calc((100% + #{$default-bdw} * 3) / 4 * 3 + #{$default-bdw});
     }
   }
 
@@ -290,7 +305,8 @@ $default-boxdiff: 35px;
   &.recovered {
     margin-left: $default-bdw;
     // [2列] 1/2
-    width: calc(100% / 3 - #{$default-bdw});
+    // width: calc(100% / 3 - #{$default-bdw});
+    width: calc(100% / 4 - #{$default-bdw});
     color: $gray-1;
   }
 }
@@ -375,20 +391,23 @@ $default-boxdiff: 35px;
     }
 
     &.tested {
-      width: calc((100% - #{px2vw($bdw, $vw)} * 3) / 6);
+      //width: calc((100% - #{px2vw($bdw, $vw)} * 3) / 6);
+      width: calc((100% - #{px2vw($bdw, $vw)} * 3) / 8);
     }
 
     &.confirmed {
       margin-left: px2vw($bdw, $vw);
       > .pillar {
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 3 - #{px2vw($bdw, $vw)} * 3
+          // (100% + #{px2vw($bdw, $vw)} * 2) / 3 - #{px2vw($bdw, $vw)} * 3
+            (100% + #{px2vw($bdw, $vw)} * 3) / 4 - #{px2vw($bdw, $vw)} * 4
         );
       }
 
       > .group {
         width: calc(
-          (100% + #{px2vw($bdw, $vw)} * 2) / 3 * 2 + #{px2vw($bdw, $vw)}
+          //  (100% + #{px2vw($bdw, $vw)} * 2) / 3 * 2 + #{px2vw($bdw, $vw)}
+            (100% + #{px2vw($bdw, $vw)} * 3) / 4 * 3 + #{px2vw($bdw, $vw)}
         );
       }
     }
@@ -420,6 +439,7 @@ $default-boxdiff: 35px;
     &.deceased,
     &.recovered {
       margin-left: px2vw($bdw, $vw);
+      //width: calc(100% / 3 - #{px2vw($bdw, $vw)});
       width: calc(100% / 3 - #{px2vw($bdw, $vw)});
     }
   }
