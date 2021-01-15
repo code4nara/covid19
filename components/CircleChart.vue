@@ -232,9 +232,10 @@ const options: ThisTypedComponentOptionsWithRecordProps<
                 ).toLocaleString() + unit
               ) */
               return `${chartData[tooltipItem.index].transition} ${
-                tooltipItem.index === 1 ? unit : '人'
-              } (総病床数: ${chartData[0].transition +
-                chartData[1].transition}${unit})`
+                tooltipItem.index === 1 ? unit : '床'
+              } (総数: ${chartData[0].transition +
+                chartData[1].transition +
+                chartData[2].transition}${unit})`
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
