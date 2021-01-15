@@ -1,12 +1,12 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <circle-chart
-      :title="$t('入院者数と残り病床数')"
+      :title="$t('感染症病床＋療養室数と入院・療養者数')"
       :title-id="'patients-and-sickbeds'"
       :chart-data="sickbedsGraph"
-      :date="Data.sickbeds_summary.date"
+      :date="Data.patientstat_summary.date"
       :unit="$t('床')"
-      :info="$t('総病床数')"
+      :info="$t('総病床＋室数')"
       :url="'http://www.pref.nara.jp/'"
       :source-text="sourceText"
       :source-url="sourceUrl"
@@ -36,8 +36,9 @@ export default {
     }
   },
   data() {
-    // 年代別陽性患者数
-    const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
+    // 陽性患者数
+    // const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
+    const sickbedsGraph = formatVariableGraph(Data.patientstat_summary.data)
 
     const data = {
       Data,
