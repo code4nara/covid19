@@ -36,7 +36,7 @@ export default {
     }
   },
   data() {
-    // 陽性患者数
+    // 入院患者数
     // const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
     const sickbedsGraph = formatVariableGraph(Data.patientstat_summary.data)
 
