@@ -6,7 +6,7 @@
       :chart-data="sickbedsGraph"
       :date="Data.patientstat_summary.date"
       :unit="$t('床')"
-      :info="$t('総病床＋室数')"
+      :info="$t('総病床＋療養室数')"
       :url="'http://www.pref.nara.jp/'"
       :source-text="sourceText"
       :source-url="sourceUrl"
