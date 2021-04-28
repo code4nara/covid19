@@ -15,7 +15,7 @@
           <ul :class="[$style.container, $style['sub-container'], $style['is-current-positive']]">
             <li>
               <div :class="[$style.row, $style['is-gray']]">
-                <span v-html="$t('入院・療養中')" />
+                <span v-text="$t('入院・療養中')" />
                 <span :class="$style.value">{{ 入院療養中数 }}{{ $t('人') }}</span>
               </div>
               <ul :class="[$style.container, $style['sub-container'], $style['is-gray']]">
