@@ -13,6 +13,8 @@
     }],
     "prettier/prettier": [
       "error", {
+        "printWidth": 120,
+        "proseWrap": "never",
         "semi": false,
         "singleQuote": true
       }
