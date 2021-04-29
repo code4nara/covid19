@@ -30,7 +30,7 @@
             <li>
               <div :class="[$style.row, $style['is-gray']]">
                 <span v-text="$t('入院・入所待機中、自宅療養中')" />
-                <span :class="$style.value">{{ 入院・入所準備中数 }}{{ $t('人') }}</span>
+                <span :class="$style.value">{{ 入院入所準備中数 }}{{ $t('人') }}</span>
               </div>
             </li>
             <!--
