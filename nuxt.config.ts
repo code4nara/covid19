@@ -154,7 +154,7 @@ const config: Configuration = {
     id: 'UA-160644417-1'
   },
   build: {
-    extractCSS: true,
+    /* extractCSS: true, */
     postcss: {
       plugins: [
         autoprefixer({ grid: 'autoplace' }),
