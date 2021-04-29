@@ -1,5 +1,5 @@
 {
-  "patients": {
+  "patients":{
     "date": "2021/04/29",
     "data": [
       {
@@ -54850,7 +54850,7 @@
       }
     ]
   },
-  "patients_summary": {
+  "patients_summary":{
     "date": "2021/04/29",
     "data": [
       {
@@ -56703,7 +56703,7 @@
       }
     ]
   },
-  "inspections": {
+  "inspections":{
     "data": [
       {
         "日付": "2020-04-01T08:00:00.000Z",
@@ -58276,7 +58276,7 @@
     ],
     "date": "2021/04/27"
   },
-  "inspection_persons_summary": {
+  "inspection_persons_summary":{
     "data": [
       {
         "日付": "2020-04-01T08:00:00.000Z",
@@ -60633,7 +60633,7 @@
     ],
     "date": "2021/04/27"
   },
-  "main_summary": {
+  "main_summary":{
     "date": "2021/04/29",
     "attr": "検査実施人数",
     "value": 0,
@@ -60650,10 +60650,10 @@
                 "attr": "入院中",
                 "value": 0,
                 "children": [
-                  {
-                    "attr": "重症",
-                    "value": 26
-                  }
+                    {
+                     "attr": "重症",
+                     "value": 26
+                    }
                 ]
               },
               {
@@ -60661,8 +60661,8 @@
                 "value": 541
               },
               {
-                "attr": "入院・入所準備中数",
-                "入院入所準備中数": 490
+                "attr": "入院入所準備中数",
+                "value": 490
               },
               {
                 "attr": "宿泊療養",
@@ -60686,7 +60686,7 @@
       }
     ]
   },
-  "sickbeds_summary": {
+  "sickbeds_summary":{
     "date": "2021/04/29",
     "total": {
       "総病床数": 391,
@@ -60697,7 +60697,7 @@
       "残り病床数": 0
     }
   },
-  "patientstat_summary": {
+  "patientstat_summary":{
     "date": "2021/04/29",
     "total": {
       "総病床数": 391,
@@ -60708,5 +60708,5 @@
       "入院入所準備中数": 490
     }
   },
-  "lastUpdate": "2021/04/30 02:08"
+  "lastUpdate": "2021/04/30 02:38"
 }
