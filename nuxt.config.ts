@@ -4,6 +4,7 @@ const autoprefixer = require('autoprefixer')
 
 const config: Configuration = {
   mode: 'universal',
+  target: 'static' , 
   /*
    ** Headers of the page
    */
@@ -153,7 +154,7 @@ const config: Configuration = {
     id: 'UA-160644417-1'
   },
   build: {
-    /* extractCSS: true,   */
+    extractCSS: true,
     postcss: {
       plugins: [
         autoprefixer({ grid: 'autoplace' }),
