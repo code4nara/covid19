@@ -142,8 +142,8 @@ export default {
     // SvgCard,
     // ConfirmedCasesTable
     InspectionPersonsChart,
-    PatientsStatus,
-    PatientsAndSickbeds
+    PatientsAndSickbeds,
+    PatientsStatus
   },
   data() {
     // 日次データを週次化
