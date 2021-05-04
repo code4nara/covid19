@@ -1,10 +1,6 @@
 <template>
   <div class="MainPage">
-    <page-header
-      :icon="headerItem.icon"
-      :title="headerItem.title"
-      :date="headerItem.date"
-    />
+    <page-header :icon="headerItem.icon" :title="headerItem.title" :date="headerItem.date" />
     <whats-new class="mb-4" :items="newsItems" />
     <v-row class="DataBlock">
       <confirmed-cases-details-card
@@ -100,6 +96,11 @@
         :source-text="'奈良県のオープンデータを利用'"
         :date="Data.sickbeds_summary.date"
       />
+      <patients-status
+        :source-url="'http://www.pref.nara.jp/55168.htm'"
+        :source-text="'奈良県のオープンデータを利用'"
+        :date="Data.sickbeds_summary.date"
+      />
     </v-row>
   </div>
 </template>
@@ -124,6 +125,7 @@ import News from '@/data/news.json'
 // import SvgCard from '@/components/SvgCard.vue'
 // import ConfirmedCasesTable from '@/components/ConfirmedCasesTable.vue'
 import PatientsAndSickbeds from '@/components/cards/PatientsAndSickbeds.vue'
+import PatientsStatus from '@/components/cards/PatientsStatus.vue'
 import InspectionPersonsChart from '@/components/InspectionPersonsChart.vue'
 // import weeklizer from '@/utils/weeklizer'
 
@@ -140,6 +142,7 @@ export default {
     // SvgCard,
     // ConfirmedCasesTable
     InspectionPersonsChart,
+    PatientsStatus,
     PatientsAndSickbeds
   },
   data() {
@@ -185,12 +188,8 @@ export default {
     /*    const confirmedCases = formatConfirmedCases(Data.main_summary)    */
 
     const sumInfoOfPatients = {
-      lText: patientsGraph[
-        patientsGraph.length - 1
-      ].cumulative.toLocaleString(),
-      sText:
-        dayjs(patientsGraph[patientsGraph.length - 1].label).format('M/D') +
-        'の累計',
+      lText: patientsGraph[patientsGraph.length - 1].cumulative.toLocaleString(),
+      sText: dayjs(patientsGraph[patientsGraph.length - 1].label).format('M/D') + 'の累計',
       unit: '人'
     }
 

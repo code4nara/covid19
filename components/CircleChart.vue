@@ -8,21 +8,11 @@
     :source-url="sourceUrl"
   >
     <template v-slot:button>
-      <!--
-      <ul :class="$style.GraphDesc">
-        <i18n tag="li" path="（注）病床数は{data}の入院可能病床数">
-          <a
-            :class="$style.GraphLink"
-            href="http://www.pref.nara.jp/55181.htm"
-            target="_blank"
-            rel="noopener"
-            place="data"
-          >
-            奈良県オープンデータ
-          </a>
-        </i18n>
-      </ul>
-      !-->
+      <p :class="$style.GraphDesc">
+        {{ $t('感染症病床と療養室数の合計に対する利用数のグラフです。') }}
+        <br />
+        {{ $t('残り病床計には重症者用を含む全ての空き病床の合計です。') }}
+      </p>
     </template>
     <pie-chart
       :style="{ display: canvas ? 'block' : 'none' }"
@@ -44,11 +34,7 @@
       item-key="name"
     />
     <template v-slot:infoPanel>
-      <data-view-basic-info-panel
-        :l-text="displayInfo.lText"
-        :s-text="displayInfo.sText"
-        :unit="displayInfo.unit"
-      />
+      <data-view-basic-info-panel :l-text="displayInfo.lText" :s-text="displayInfo.sText" :unit="displayInfo.unit" />
     </template>
     <template v-slot:footer>
       <open-data-link v-show="url" :url="url" />
@@ -125,13 +111,7 @@ type Props = {
   sourceUrl: string
 }
 
-const options: ThisTypedComponentOptionsWithRecordProps<
-  Vue,
-  Data,
-  Methods,
-  Computed,
-  Props
-> = {
+const options: ThisTypedComponentOptionsWithRecordProps<Vue, Data, Methods, Computed, Props> = {
   created() {
     this.canvas = process.browser
   },
@@ -190,9 +170,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
   computed: {
     displayInfo() {
       return {
-        lText: this.chartData[
-          this.chartData.length - 1
-        ].cumulative.toLocaleString(),
+        lText: this.chartData[this.chartData.length - 1].cumulative.toLocaleString(),
         sText: this.info,
         unit: this.unit
       }
@@ -233,9 +211,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
               ) */
               return `${chartData[tooltipItem.index].transition} ${
                 tooltipItem.index === 1 ? unit : '床'
-              } (総数: ${chartData[0].transition +
-                chartData[1].transition +
-                chartData[2].transition}${unit})`
+              } (総数: ${chartData[0].transition + chartData[1].transition + chartData[2].transition}${unit})`
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
@@ -269,10 +245,7 @@ const options: ThisTypedComponentOptionsWithRecordProps<
     },
     tableData() {
       return this.chartData.map((_, i) => {
-        return Object.assign(
-          { text: this.chartData[i].label },
-          { [i]: this.chartData[i].transition }
-        )
+        return Object.assign({ text: this.chartData[i].label }, { [i]: this.chartData[i].transition })
       })
     }
   }
