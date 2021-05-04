@@ -1,7 +1,7 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <circle-chart
-      :title="$t('感染症病床＋療養室数と入院・療養者数')"
+      :title="$t('総感染症病床・療養室数と入院・療養中数')"
       :title-id="'patients-and-sickbeds'"
       :chart-data="sickbedsGraph"
       :date="Data.patientstat_summary.date"
@@ -37,8 +37,8 @@ export default {
   },
   data() {
     // 入院患者数
-    // const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
-    const sickbedsGraph = formatVariableGraph(Data.patientstat_summary.data)
+    const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
+    // const sickbedsGraph = formatVariableGraph(Data.patientstat_summary.data)
 
     const data = {
       Data,
