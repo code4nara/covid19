@@ -1,12 +1,12 @@
 <template>
   <v-col cols="12" md="6" class="DataCard">
     <circle-chart
-      :title="$t('総感染症病床・療養室数と入院・療養中数')"
-      :title-id="'patients-and-sickbeds'"
+      :title="$t('現在感染者の各状況の割合')"
+      :title-id="'patients-status'"
       :chart-data="sickbedsGraph"
       :date="Data.patientstat_summary.date"
-      :unit="$t('床')"
-      :info="$t('総病床＋療養室数')"
+      :unit="$t('人')"
+      :info="$t('現在感染者数合計')"
       :url="'http://www.pref.nara.jp/'"
       :source-text="sourceText"
       :source-url="sourceUrl"
@@ -16,7 +16,8 @@
 
 <script>
 import Data from '@/data/data.json'
-import CircleChart from '@/components/CircleChart.vue'
+// import CircleChart from '@/components/CircleChart.vue'
+import CircleChart from '@/components/CircleChartMan.vue'
 import formatVariableGraph from '@/utils/formatVariableGraph'
 
 export default {
@@ -37,8 +38,8 @@ export default {
   },
   data() {
     // 入院患者数
-    const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
-    // const sickbedsGraph = formatVariableGraph(Data.patientstat_summary.data)
+    // const sickbedsGraph = formatVariableGraph(Data.sickbeds_summary.data)
+    const sickbedsGraph = formatVariableGraph(Data.patientstat_summary.data)
 
     const data = {
       Data,

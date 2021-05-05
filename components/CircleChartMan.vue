@@ -9,9 +9,7 @@
   >
     <template v-slot:button>
       <p :class="$style.GraphDesc">
-        {{ $t('感染症病床と療養室数の合計に対する利用数のグラフです。') }}
-        <br />
-        {{ $t('残り病床計には重症者用を含む全ての空き病床の合計です。') }}
+        {{ $t('入院・療養中の人数は重症者の人数を除いた数字です。') }}
       </p>
     </template>
     <pie-chart
@@ -210,8 +208,8 @@ const options: ThisTypedComponentOptionsWithRecordProps<Vue, Data, Methods, Comp
                 ).toLocaleString() + unit
               ) */
               return `${chartData[tooltipItem.index].transition} ${
-                tooltipItem.index === 1 ? unit : '床'
-              } (総数: ${chartData[0].transition + chartData[1].transition + chartData[2].transition}${unit})`
+                tooltipItem.index === 1 ? unit : '人'
+              } (合計: ${chartData[0].transition + chartData[1].transition + chartData[2].transition}${unit})`
             },
             title(tooltipItem: any, data: any) {
               return data.labels[tooltipItem[0].index]
