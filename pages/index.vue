@@ -19,6 +19,11 @@
           />
         </svg-card>
       </v-col> -->
+      <patients-status
+        :source-url="'http://www.pref.nara.jp/55168.htm'"
+        :source-text="'奈良県のオープンデータを利用'"
+        :date="Data.sickbeds_summary.date"
+      />
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
           title="陽性者数"
@@ -96,11 +101,6 @@
         :source-text="'奈良県のオープンデータを利用'"
         :date="Data.sickbeds_summary.date"
       />
-      <patients-status
-        :source-url="'http://www.pref.nara.jp/55168.htm'"
-        :source-text="'奈良県のオープンデータを利用'"
-        :date="Data.sickbeds_summary.date"
-      />
     </v-row>
   </div>
 </template>
@@ -109,12 +109,10 @@
 import dayjs from 'dayjs'
 import PageHeader from '@/components/PageHeader.vue'
 import TimeBarChart from '@/components/TimeBarChart.vue'
-// import MetroBarChart from '@/components/MetroBarChart.vue'
 // import TimeStackedBarChart from '@/components/TimeStackedBarChart.vue'
 import WhatsNew from '@/components/WhatsNew.vue'
 // import StaticInfo from '@/components/StaticInfo.vue'
 import Data from '@/data/data.json'
-// import MetroData from '@/data/metro.json'
 import DataTable from '@/components/DataTable.vue'
 import formatGraph from '@/utils/formatGraph'
 import formatTable from '@/utils/formatTable'
@@ -133,7 +131,6 @@ export default {
   components: {
     PageHeader,
     TimeBarChart,
-    //    MetroBarChart,
     //    TimeStackedBarChart,
     WhatsNew,
     //    StaticInfo,
@@ -163,8 +160,6 @@ export default {
     //  const contactsGraph = formatGraph(Data.contacts.data)
     // 帰国者・接触者電話相談センター相談件数
     //  const querentsGraph = formatGraph(Data.querents.data)
-    // 名古屋市営地下鉄の利用者数の推移
-    // const metroGraph = MetroData
 
     // 検査実施日別グラフ
     const inspectionsGraph = formatGraph(Data.inspections.data)
@@ -195,13 +190,12 @@ export default {
 
     const data = {
       Data,
-      //      dataWeekly,
+      //  dataWeekly,
       patientsTable,
       patientsGraph,
-      // dischargesGraph,
+      //  dischargesGraph,
       //  contactsGraph,
       //  querentsGraph,
-      // metroGraph,
       inspectionsGraph,
       // inspectionsItems,
       // inspectionsLabels,
@@ -212,60 +206,7 @@ export default {
         title: '奈良県内の最新感染動向',
         date: Data.lastUpdate
       },
-      newsItems: News.newsItems,
-      metroGraphOption: {
-        responsive: true,
-        legend: {
-          display: true
-        },
-        scales: {
-          xAxes: [
-            {
-              position: 'bottom',
-              stacked: false,
-              gridLines: {
-                display: true
-              },
-              ticks: {
-                fontSize: 10,
-                maxTicksLimit: 20,
-                fontColor: '#808080'
-              }
-            }
-          ],
-          yAxes: [
-            {
-              stacked: false,
-              gridLines: {
-                display: true
-              },
-              ticks: {
-                fontSize: 12,
-                maxTicksLimit: 10,
-                fontColor: '#808080',
-                callback(value) {
-                  return value.toFixed(2) + '%'
-                }
-              }
-            }
-          ]
-        },
-        tooltips: {
-          displayColors: false,
-          callbacks: {
-            title(tooltipItems, _) {
-              const label = tooltipItems[0].label
-              return `期間: ${label}`
-            },
-            label(tooltipItem, data) {
-              const currentData = data.datasets[tooltipItem.datasetIndex]
-              const percentage = `${currentData.data[tooltipItem.index]}%`
-              return `利用者数との相対値: ${percentage}`
-              // return `${metroGraph.base_period}の利用者数との相対値: ${percentage}`
-            }
-          }
-        }
-      }
+      newsItems: News.newsItems
     }
     return data
   },
