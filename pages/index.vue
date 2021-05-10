@@ -135,12 +135,12 @@ export default {
     WhatsNew,
     //    StaticInfo,
     ConfirmedCasesDetailsCard,
-    PatientsStatus,
     DataTable,
     // SvgCard,
     // ConfirmedCasesTable
     InspectionPersonsChart,
-    PatientsAndSickbeds
+    PatientsAndSickbeds,
+    PatientsStatus
   },
   data() {
     // 日次データを週次化
