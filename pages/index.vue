@@ -101,6 +101,11 @@
         :source-text="'奈良県のオープンデータを利用'"
         :date="Data.sickbeds_summary.date"
       />
+      <patients-status
+        :source-url="'http://www.pref.nara.jp/55168.htm'"
+        :source-text="'奈良県のオープンデータを利用'"
+        :date="Data.sickbeds_summary.date"
+      />
     </v-row>
   </div>
 </template>
