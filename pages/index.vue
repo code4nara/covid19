@@ -11,7 +11,7 @@
         <svg-card
           title="検査陽性者の状況"
           :title-id="'details-of-confirmed-cases'"
-          :date="Data.main_summary.date"
+          :date="Data.mein_summary.date"
         >
           <confirmed-cases-table
             aria-label="検査陽性者の状況"
@@ -22,7 +22,7 @@
       <patients-status
         :source-url="'http://www.pref.nara.jp/55168.htm'"
         :source-text="'奈良県のオープンデータを利用'"
-        :date="Data.sickbeds_summary.date"
+        :date="Data.patientstat_summary.date"
       />
       <v-col cols="12" md="6" class="DataCard">
         <time-bar-chart
@@ -97,11 +97,6 @@
       </v-col>
       -->
       <patients-and-sickbeds
-        :source-url="'http://www.pref.nara.jp/55168.htm'"
-        :source-text="'奈良県のオープンデータを利用'"
-        :date="Data.sickbeds_summary.date"
-      />
-      <patients-status
         :source-url="'http://www.pref.nara.jp/55168.htm'"
         :source-text="'奈良県のオープンデータを利用'"
         :date="Data.sickbeds_summary.date"
