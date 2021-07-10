@@ -31,7 +31,7 @@ export default {
         },
         {
           title: '新型コロナウイルス感染症対策　経営相談窓口（奈良県）',
-          link: 'http://www.pref.nara.jp/#007',
+          link: 'http://www.pref.nara.jp/55413.htm#015',
           body:
             '新型コロナウイルス感染症に関連して、労働問題で困ったことがあれば、ご相談ください。'
         }
